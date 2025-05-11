@@ -1,0 +1,15 @@
+name: mh_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - plotly
+  - scipy
+  - tqdm
+  - requests
+  - pip
+  - pip:
+    - yfinance>=0.1.70 
