@@ -1,79 +1,90 @@
-# Byte-compiled / optimized / DLL files
+# Python bytecode cache
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
+.Python
 
 # Distribution / packaging
-.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
 env/
 venv/
 ENV/
-env.bak/
-venv.bak/
+.env
+.venv
 .mh_env/
-.mh_env
-*.egg-info/
-dist/
-build/
-.eggs/
+crypto_deribit/
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
+# Project-specific cache and data directories
+options_cache/
+results/
+logs/
+data/
+*.csv
+*.json
+*.pickle
+*.parquet
+*.html
 
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# pyenv
-.python-version
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# VSCode/Editor/IDE
-.vscode/
+# IDE files
 .idea/
+.vscode/
+*.swp
+*.swo
 *.sublime-workspace
 *.sublime-project
 
-# MacOS
+# OS specific files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Results and cache
-results/
-options_cache/
-*.csv
-
-# Environment files
+# Environment files with secrets
 .env
 .env.*
+!.env.example
 
-# GitLens
-.gitlens/
+# Testing
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.pytest_cache/
+pytest-report.xml
+coverage.xml
+*,cover
 
-# New environment variables
-import os
-DERIBIT_API_KEY = os.getenv("DERIBIT_API_KEY")
-DERIBIT_API_SECRET = os.getenv("DERIBIT_API_SECRET")
-DERIBIT_API_URL = os.getenv("DERIBIT_API_URL", "https://www.deribit.com/api/v2")
+# Documentation
+docs/_build/
+site/
 
-# python-dotenv
-python-dotenv>=1.0.0
+# Conda environments
+.conda/
+
+# Profiling results
+profile_output.txt
+profile_output.prof

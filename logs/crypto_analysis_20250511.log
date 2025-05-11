@@ -111,3 +111,1198 @@ ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.i
 2025-05-11 20:17:54,832 [WARNING] crypto_analysis:444: No instruments found for ETH
 2025-05-11 20:17:54,836 [DEBUG] crypto_analysis:715: Cleaning up resources
 2025-05-11 20:17:54,894 [WARNING] crypto_analysis:191: Analysis interrupted by user
+2025-05-11 20:20:01,499 [WARNING] crypto_analysis:173: Configuration issue: API credentials required for production environment.
+2025-05-11 20:21:48,097 [WARNING] crypto_analysis:173: Configuration issue: API credentials required for production environment.
+2025-05-11 20:22:00,349 [INFO] crypto_analysis:114: Starting Crypto Volatility and Options Analysis System
+2025-05-11 20:22:00,349 [INFO] crypto_analysis:129: No symbols specified, using default: ['BTC-USD', 'ETH-USD']
+2025-05-11 20:22:00,349 [INFO] crypto_analysis:115: Initialized VolatilityOptionsAnalysisSystem for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:22:00,349 [INFO] crypto_analysis:167: Running full analysis pipeline
+2025-05-11 20:22:00,349 [INFO] crypto_analysis:639: Starting analysis pipeline
+2025-05-11 20:22:00,349 [INFO] crypto_analysis:643: Step 1: Fetching data
+2025-05-11 20:22:00,349 [INFO] crypto_analysis:202: Initializing data fetcher
+2025-05-11 20:22:00,350 [INFO] crypto_analysis:81: Initialized CryptoDataFetcher with production environment
+2025-05-11 20:22:00,350 [INFO] crypto_analysis:211: Fetching data for 2 symbols
+2025-05-11 20:22:00,350 [INFO] crypto_analysis:614: Fetching all data for 2 symbols
+2025-05-11 20:22:00,350 [INFO] crypto_analysis:255: Fetching price data for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:22:00,350 [DEBUG] crypto_analysis:261: Fetching data for BTC-USD
+2025-05-11 20:22:00,350 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:22:00,350 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:22:00,350 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:22:00,354 [DEBUG] peewee:3319: ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-05-11 20:22:00,354 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['BTC-USD', 1, 0])
+2025-05-11 20:22:00,354 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:22:00,356 [DEBUG] yfinance:165: BTC-USD: Yahoo GET parameters: {'period1': '2025-04-11 00:00:00+00:00', 'period2': '2025-05-11 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:22:00,357 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:22:00,357 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:22:00,357 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/BTC-USD
+2025-05-11 20:22:00,357 [DEBUG] yfinance:344: params=frozendict.frozendict({'period1': 1744329600, 'period2': 1746921600, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-05-11 20:22:00,357 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:22:00,357 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:22:00,357 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:22:01,307 [DEBUG] yfinance:199: crumb = '1k9/FcdNL28'
+2025-05-11 20:22:01,307 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:22:01,307 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:22:01,725 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:22:01,725 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:22:01,725 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:22:01,734 [DEBUG] yfinance:281: BTC-USD: yfinance received OHLC data: 2025-04-11 00:00:00 -> 2025-05-10 00:00:00
+2025-05-11 20:22:01,737 [DEBUG] yfinance:318: BTC-USD: OHLC after cleaning: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:22:01,744 [DEBUG] yfinance:388: BTC-USD: OHLC after combining events: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:22:01,749 [DEBUG] yfinance:467: BTC-USD: yfinance returning OHLC: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:22:01,749 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:22:01,750 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:22:01,753 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:22:01,755 [ERROR] crypto_analysis:300: Error fetching price data for BTC-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:22:01,759 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:22:01,759 [DEBUG] crypto_analysis:261: Fetching data for ETH-USD
+2025-05-11 20:22:01,759 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:22:01,760 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:22:01,760 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:22:01,760 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['ETH-USD', 1, 0])
+2025-05-11 20:22:01,760 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:22:01,760 [DEBUG] yfinance:165: ETH-USD: Yahoo GET parameters: {'period1': '2025-04-11 00:00:00+00:00', 'period2': '2025-05-11 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:22:01,761 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:22:01,761 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:22:01,761 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/ETH-USD
+2025-05-11 20:22:01,761 [DEBUG] yfinance:344: params=frozendict.frozendict({'period1': 1744329600, 'period2': 1746921600, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-05-11 20:22:01,761 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:22:01,761 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:22:01,761 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:22:02,051 [DEBUG] yfinance:179: reusing crumb
+2025-05-11 20:22:02,051 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:22:02,052 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:22:02,384 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:22:02,385 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:22:02,385 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:22:02,389 [DEBUG] yfinance:281: ETH-USD: yfinance received OHLC data: 2025-04-11 00:00:00 -> 2025-05-10 00:00:00
+2025-05-11 20:22:02,390 [DEBUG] yfinance:318: ETH-USD: OHLC after cleaning: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:22:02,394 [DEBUG] yfinance:388: ETH-USD: OHLC after combining events: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:22:02,400 [DEBUG] yfinance:467: ETH-USD: yfinance returning OHLC: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:22:02,400 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:22:02,400 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:22:02,402 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:22:02,404 [ERROR] crypto_analysis:300: Error fetching price data for ETH-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:22:02,405 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:22:02,406 [INFO] crypto_analysis:412: Fetching options data for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:22:02,406 [INFO] crypto_analysis:429: Loading BTC options data from cache: /Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/options_cache/BTC_options_2025-04-11_2025-05-11.csv
+2025-05-11 20:22:02,409 [WARNING] crypto_analysis:437: Error loading cached options data for BTC: Missing column provided to 'parse_dates': 'expiration'
+2025-05-11 20:22:02,410 [INFO] crypto_analysis:439: Fetching options chain for BTC from Deribit
+2025-05-11 20:22:02,413 [DEBUG] urllib3.connectionpool:1049: Starting new HTTPS connection (1): www.deribit.com:443
+2025-05-11 20:22:02,838 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=BTC&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:22:02,840 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=BTC&kind=option&expired=False. Retrying in 1 seconds...
+2025-05-11 20:22:03,959 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=BTC&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:22:03,960 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=BTC&kind=option&expired=False. Retrying in 2 seconds...
+2025-05-11 20:22:06,073 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=BTC&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:22:06,073 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=BTC&kind=option&expired=False. Retrying in 4 seconds...
+2025-05-11 20:22:10,190 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=BTC&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:22:10,191 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=BTC&kind=option&expired=False. Retrying in 8 seconds...
+2025-05-11 20:22:10,192 [ERROR] crypto_analysis:358: Error fetching instruments for BTC: HTTP error after 3 retries: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=BTC&kind=option&expired=False
+2025-05-11 20:22:10,192 [WARNING] crypto_analysis:444: No instruments found for BTC
+2025-05-11 20:22:10,192 [INFO] crypto_analysis:429: Loading ETH options data from cache: /Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/options_cache/ETH_options_2025-04-11_2025-05-11.csv
+2025-05-11 20:22:10,194 [WARNING] crypto_analysis:437: Error loading cached options data for ETH: Missing column provided to 'parse_dates': 'expiration'
+2025-05-11 20:22:10,194 [INFO] crypto_analysis:439: Fetching options chain for ETH from Deribit
+2025-05-11 20:22:10,300 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=ETH&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:22:10,301 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=ETH&kind=option&expired=False. Retrying in 1 seconds...
+2025-05-11 20:22:11,421 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=ETH&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:22:11,422 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=ETH&kind=option&expired=False. Retrying in 2 seconds...
+2025-05-11 20:22:13,550 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=ETH&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:22:13,552 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=ETH&kind=option&expired=False. Retrying in 4 seconds...
+2025-05-11 20:22:17,663 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=ETH&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:22:17,663 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=ETH&kind=option&expired=False. Retrying in 8 seconds...
+2025-05-11 20:22:17,663 [ERROR] crypto_analysis:358: Error fetching instruments for ETH: HTTP error after 3 retries: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=ETH&kind=option&expired=False
+2025-05-11 20:22:17,663 [WARNING] crypto_analysis:444: No instruments found for ETH
+2025-05-11 20:22:17,664 [INFO] crypto_analysis:230: Fetched price data for 0/2 symbols
+2025-05-11 20:22:17,664 [INFO] crypto_analysis:232: Fetched options data for 0/2 symbols
+2025-05-11 20:22:17,664 [INFO] crypto_analysis:647: Step 2: Analyzing volatility
+2025-05-11 20:22:17,664 [INFO] crypto_analysis:253: Initializing volatility analyzer
+2025-05-11 20:22:17,664 [DEBUG] crypto_analysis:92: Input validation completed successfully
+2025-05-11 20:22:17,664 [INFO] crypto_analysis:61: Initialized CryptoVolatilityAnalyzer with 2 symbols
+2025-05-11 20:22:17,664 [INFO] crypto_analysis:263: Analyzing volatility for all symbols
+2025-05-11 20:22:17,664 [INFO] crypto_analysis:425: Analyzing volatility for 2 symbols
+2025-05-11 20:22:17,665 [WARNING] crypto_analysis:332: Empty price data for BTC-USD
+2025-05-11 20:22:17,665 [WARNING] crypto_analysis:332: Empty price data for ETH-USD
+2025-05-11 20:22:17,665 [INFO] crypto_analysis:279: Completed volatility analysis for 0/2 symbols
+2025-05-11 20:22:17,665 [INFO] crypto_analysis:652: Step 3: Analyzing options
+2025-05-11 20:22:17,665 [INFO] crypto_analysis:308: Initializing options analyzer
+2025-05-11 20:22:17,666 [DEBUG] crypto_analysis:123: Input validation completed successfully
+2025-05-11 20:22:17,666 [INFO] crypto_analysis:89: Initialized OptionsAnalyzer with 2 symbols
+2025-05-11 20:22:17,666 [INFO] crypto_analysis:315: Analyzing options for all symbols
+2025-05-11 20:22:17,666 [INFO] crypto_analysis:873: Analyzing options for 2 symbols
+2025-05-11 20:22:17,666 [WARNING] crypto_analysis:503: Empty data for BTC-USD
+2025-05-11 20:22:17,666 [WARNING] crypto_analysis:503: Empty data for ETH-USD
+2025-05-11 20:22:17,666 [INFO] crypto_analysis:331: Completed options analysis for 0/2 symbols
+2025-05-11 20:22:17,666 [INFO] crypto_analysis:659: Step 4: Generating visualizations
+2025-05-11 20:22:17,666 [ERROR] crypto_analysis:349: No analysis results available, perform analysis first
+2025-05-11 20:22:17,666 [ERROR] crypto_analysis:382: Error generating visualizations: No analysis results available, perform analysis first
+2025-05-11 20:22:17,667 [DEBUG] crypto_analysis:383: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 350, in generate_visualizations
+    raise AnalysisSystemError("No analysis results available, perform analysis first")
+analysis_system.AnalysisSystemError: No analysis results available, perform analysis first
+
+2025-05-11 20:22:17,668 [ERROR] crypto_analysis:702: Error in analysis pipeline: Failed to generate visualizations: No analysis results available, perform analysis first
+2025-05-11 20:22:17,668 [DEBUG] crypto_analysis:703: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 350, in generate_visualizations
+    raise AnalysisSystemError("No analysis results available, perform analysis first")
+analysis_system.AnalysisSystemError: No analysis results available, perform analysis first
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 660, in run_analysis
+    visualization_results = self.generate_visualizations()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 384, in generate_visualizations
+    raise AnalysisSystemError(f"Failed to generate visualizations: {str(e)}")
+analysis_system.AnalysisSystemError: Failed to generate visualizations: No analysis results available, perform analysis first
+
+2025-05-11 20:22:17,668 [DEBUG] crypto_analysis:715: Cleaning up resources
+2025-05-11 20:22:17,668 [DEBUG] crypto_analysis:680: Cleaning up resources
+2025-05-11 20:22:17,698 [DEBUG] crypto_analysis:1103: Cleaning up resources
+2025-05-11 20:22:17,740 [ERROR] crypto_analysis:171: Analysis pipeline failed: Failed to generate visualizations: No analysis results available, perform analysis first
+2025-05-11 20:25:58,738 [WARNING] crypto_analysis:173: Configuration issue: API credentials required for production environment.
+2025-05-11 20:25:59,922 [INFO] crypto_analysis:114: Starting Crypto Volatility and Options Analysis System
+2025-05-11 20:25:59,922 [INFO] crypto_analysis:129: No symbols specified, using default: ['BTC-USD', 'ETH-USD']
+2025-05-11 20:25:59,922 [INFO] crypto_analysis:115: Initialized VolatilityOptionsAnalysisSystem for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:25:59,922 [INFO] crypto_analysis:167: Running full analysis pipeline
+2025-05-11 20:25:59,922 [INFO] crypto_analysis:639: Starting analysis pipeline
+2025-05-11 20:25:59,922 [INFO] crypto_analysis:643: Step 1: Fetching data
+2025-05-11 20:25:59,922 [INFO] crypto_analysis:202: Initializing data fetcher
+2025-05-11 20:25:59,923 [INFO] crypto_analysis:81: Initialized CryptoDataFetcher with production environment
+2025-05-11 20:25:59,923 [INFO] crypto_analysis:211: Fetching data for 2 symbols
+2025-05-11 20:25:59,923 [INFO] crypto_analysis:614: Fetching all data for 2 symbols
+2025-05-11 20:25:59,923 [INFO] crypto_analysis:255: Fetching price data for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:25:59,923 [DEBUG] crypto_analysis:261: Fetching data for BTC-USD
+2025-05-11 20:25:59,923 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:25:59,923 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:25:59,923 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:25:59,926 [DEBUG] peewee:3319: ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-05-11 20:25:59,926 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['BTC-USD', 1, 0])
+2025-05-11 20:25:59,926 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:25:59,927 [DEBUG] yfinance:165: BTC-USD: Yahoo GET parameters: {'period1': '2025-04-11 00:00:00+00:00', 'period2': '2025-05-11 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:25:59,928 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:25:59,928 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:25:59,928 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/BTC-USD
+2025-05-11 20:25:59,928 [DEBUG] yfinance:344: params=frozendict.frozendict({'period1': 1744329600, 'period2': 1746921600, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-05-11 20:25:59,928 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:25:59,928 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:25:59,928 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:26:00,854 [DEBUG] yfinance:199: crumb = '5kLps2JgLhD'
+2025-05-11 20:26:00,855 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:26:00,855 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:26:01,179 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:26:01,180 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:26:01,180 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:26:01,191 [DEBUG] yfinance:281: BTC-USD: yfinance received OHLC data: 2025-04-11 00:00:00 -> 2025-05-10 00:00:00
+2025-05-11 20:26:01,194 [DEBUG] yfinance:318: BTC-USD: OHLC after cleaning: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:26:01,200 [DEBUG] yfinance:388: BTC-USD: OHLC after combining events: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:26:01,203 [DEBUG] yfinance:467: BTC-USD: yfinance returning OHLC: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:26:01,203 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:26:01,203 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:26:01,206 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:26:01,207 [ERROR] crypto_analysis:300: Error fetching price data for BTC-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:26:01,210 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:26:01,210 [DEBUG] crypto_analysis:261: Fetching data for ETH-USD
+2025-05-11 20:26:01,210 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:26:01,211 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:26:01,211 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:26:01,211 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['ETH-USD', 1, 0])
+2025-05-11 20:26:01,211 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:26:01,211 [DEBUG] yfinance:165: ETH-USD: Yahoo GET parameters: {'period1': '2025-04-11 00:00:00+00:00', 'period2': '2025-05-11 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:26:01,211 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:26:01,211 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:26:01,211 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/ETH-USD
+2025-05-11 20:26:01,211 [DEBUG] yfinance:344: params=frozendict.frozendict({'period1': 1744329600, 'period2': 1746921600, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-05-11 20:26:01,211 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:26:01,211 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:26:01,211 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:26:01,517 [DEBUG] yfinance:179: reusing crumb
+2025-05-11 20:26:01,517 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:26:01,517 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:26:01,851 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:26:01,852 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:26:01,852 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:26:01,857 [DEBUG] yfinance:281: ETH-USD: yfinance received OHLC data: 2025-04-11 00:00:00 -> 2025-05-10 00:00:00
+2025-05-11 20:26:01,858 [DEBUG] yfinance:318: ETH-USD: OHLC after cleaning: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:26:01,861 [DEBUG] yfinance:388: ETH-USD: OHLC after combining events: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:26:01,865 [DEBUG] yfinance:467: ETH-USD: yfinance returning OHLC: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:26:01,865 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:26:01,866 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:26:01,867 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:26:01,869 [ERROR] crypto_analysis:300: Error fetching price data for ETH-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:26:01,870 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:26:01,870 [INFO] crypto_analysis:412: Fetching options data for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:26:01,870 [INFO] crypto_analysis:429: Loading BTC options data from cache: /Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/options_cache/BTC_options_2025-04-11_2025-05-11.csv
+2025-05-11 20:26:01,874 [WARNING] crypto_analysis:437: Error loading cached options data for BTC: Missing column provided to 'parse_dates': 'expiration'
+2025-05-11 20:26:01,874 [INFO] crypto_analysis:439: Fetching options chain for BTC from Deribit
+2025-05-11 20:26:01,877 [DEBUG] urllib3.connectionpool:1049: Starting new HTTPS connection (1): www.deribit.com:443
+2025-05-11 20:26:02,437 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=BTC&kind=option&expired=false HTTP/1.1" 200 491041
+2025-05-11 20:26:02,885 [INFO] crypto_analysis:351: Retrieved 734 instruments for BTC
+2025-05-11 20:26:02,886 [INFO] crypto_analysis:448: Found 734 instruments for BTC
+2025-05-11 20:26:02,891 [INFO] crypto_analysis:463: Filtered to 0 instruments within date range
+2025-05-11 20:26:02,993 [WARNING] crypto_analysis:514: No valid options data retrieved for BTC
+2025-05-11 20:26:02,994 [INFO] crypto_analysis:429: Loading ETH options data from cache: /Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/options_cache/ETH_options_2025-04-11_2025-05-11.csv
+2025-05-11 20:26:02,995 [WARNING] crypto_analysis:437: Error loading cached options data for ETH: Missing column provided to 'parse_dates': 'expiration'
+2025-05-11 20:26:02,995 [INFO] crypto_analysis:439: Fetching options chain for ETH from Deribit
+2025-05-11 20:26:03,104 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=ETH&kind=option&expired=false HTTP/1.1" 200 478257
+2025-05-11 20:26:03,286 [INFO] crypto_analysis:351: Retrieved 718 instruments for ETH
+2025-05-11 20:26:03,287 [INFO] crypto_analysis:448: Found 718 instruments for ETH
+2025-05-11 20:26:03,290 [INFO] crypto_analysis:463: Filtered to 0 instruments within date range
+2025-05-11 20:26:03,290 [WARNING] crypto_analysis:514: No valid options data retrieved for ETH
+2025-05-11 20:26:03,291 [INFO] crypto_analysis:230: Fetched price data for 0/2 symbols
+2025-05-11 20:26:03,291 [INFO] crypto_analysis:232: Fetched options data for 0/2 symbols
+2025-05-11 20:26:03,291 [INFO] crypto_analysis:647: Step 2: Analyzing volatility
+2025-05-11 20:26:03,291 [INFO] crypto_analysis:253: Initializing volatility analyzer
+2025-05-11 20:26:03,292 [DEBUG] crypto_analysis:92: Input validation completed successfully
+2025-05-11 20:26:03,292 [INFO] crypto_analysis:61: Initialized CryptoVolatilityAnalyzer with 2 symbols
+2025-05-11 20:26:03,292 [INFO] crypto_analysis:263: Analyzing volatility for all symbols
+2025-05-11 20:26:03,292 [INFO] crypto_analysis:425: Analyzing volatility for 2 symbols
+2025-05-11 20:26:03,292 [WARNING] crypto_analysis:332: Empty price data for BTC-USD
+2025-05-11 20:26:03,292 [WARNING] crypto_analysis:332: Empty price data for ETH-USD
+2025-05-11 20:26:03,292 [INFO] crypto_analysis:279: Completed volatility analysis for 0/2 symbols
+2025-05-11 20:26:03,293 [INFO] crypto_analysis:652: Step 3: Analyzing options
+2025-05-11 20:26:03,293 [INFO] crypto_analysis:308: Initializing options analyzer
+2025-05-11 20:26:03,293 [DEBUG] crypto_analysis:123: Input validation completed successfully
+2025-05-11 20:26:03,293 [INFO] crypto_analysis:89: Initialized OptionsAnalyzer with 2 symbols
+2025-05-11 20:26:03,293 [INFO] crypto_analysis:315: Analyzing options for all symbols
+2025-05-11 20:26:03,293 [INFO] crypto_analysis:873: Analyzing options for 2 symbols
+2025-05-11 20:26:03,293 [WARNING] crypto_analysis:503: Empty data for BTC-USD
+2025-05-11 20:26:03,293 [WARNING] crypto_analysis:503: Empty data for ETH-USD
+2025-05-11 20:26:03,293 [INFO] crypto_analysis:331: Completed options analysis for 0/2 symbols
+2025-05-11 20:26:03,293 [INFO] crypto_analysis:659: Step 4: Generating visualizations
+2025-05-11 20:26:03,293 [ERROR] crypto_analysis:349: No analysis results available, perform analysis first
+2025-05-11 20:26:03,293 [ERROR] crypto_analysis:382: Error generating visualizations: No analysis results available, perform analysis first
+2025-05-11 20:26:03,295 [DEBUG] crypto_analysis:383: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 350, in generate_visualizations
+    raise AnalysisSystemError("No analysis results available, perform analysis first")
+analysis_system.AnalysisSystemError: No analysis results available, perform analysis first
+
+2025-05-11 20:26:03,295 [ERROR] crypto_analysis:702: Error in analysis pipeline: Failed to generate visualizations: No analysis results available, perform analysis first
+2025-05-11 20:26:03,295 [DEBUG] crypto_analysis:703: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 350, in generate_visualizations
+    raise AnalysisSystemError("No analysis results available, perform analysis first")
+analysis_system.AnalysisSystemError: No analysis results available, perform analysis first
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 660, in run_analysis
+    visualization_results = self.generate_visualizations()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 384, in generate_visualizations
+    raise AnalysisSystemError(f"Failed to generate visualizations: {str(e)}")
+analysis_system.AnalysisSystemError: Failed to generate visualizations: No analysis results available, perform analysis first
+
+2025-05-11 20:26:03,295 [DEBUG] crypto_analysis:715: Cleaning up resources
+2025-05-11 20:26:03,295 [DEBUG] crypto_analysis:680: Cleaning up resources
+2025-05-11 20:26:03,322 [DEBUG] crypto_analysis:1103: Cleaning up resources
+2025-05-11 20:26:03,357 [ERROR] crypto_analysis:171: Analysis pipeline failed: Failed to generate visualizations: No analysis results available, perform analysis first
+2025-05-11 20:28:04,356 [WARNING] crypto_analysis:173: Configuration issue: API credentials required for production environment.
+2025-05-11 20:28:05,708 [INFO] crypto_analysis:114: Starting Crypto Volatility and Options Analysis System
+2025-05-11 20:28:05,708 [INFO] crypto_analysis:129: No symbols specified, using default: ['BTC-USD', 'ETH-USD']
+2025-05-11 20:28:05,708 [INFO] crypto_analysis:115: Initialized VolatilityOptionsAnalysisSystem for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:28:05,708 [INFO] crypto_analysis:167: Running full analysis pipeline
+2025-05-11 20:28:05,708 [INFO] crypto_analysis:639: Starting analysis pipeline
+2025-05-11 20:28:05,708 [INFO] crypto_analysis:643: Step 1: Fetching data
+2025-05-11 20:28:05,708 [INFO] crypto_analysis:202: Initializing data fetcher
+2025-05-11 20:28:05,708 [INFO] crypto_analysis:81: Initialized CryptoDataFetcher with production environment
+2025-05-11 20:28:05,708 [INFO] crypto_analysis:211: Fetching data for 2 symbols
+2025-05-11 20:28:05,708 [INFO] crypto_analysis:625: Fetching all data for 2 symbols
+2025-05-11 20:28:05,709 [INFO] crypto_analysis:255: Fetching price data for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:28:05,709 [DEBUG] crypto_analysis:261: Fetching data for BTC-USD
+2025-05-11 20:28:05,709 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:28:05,709 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:28:05,709 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:28:05,711 [DEBUG] peewee:3319: ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-05-11 20:28:05,711 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['BTC-USD', 1, 0])
+2025-05-11 20:28:05,711 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:28:05,712 [DEBUG] yfinance:165: BTC-USD: Yahoo GET parameters: {'period1': '2025-04-11 00:00:00+00:00', 'period2': '2025-05-11 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:28:05,713 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:28:05,713 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:28:05,713 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/BTC-USD
+2025-05-11 20:28:05,713 [DEBUG] yfinance:344: params=frozendict.frozendict({'period1': 1744329600, 'period2': 1746921600, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-05-11 20:28:05,713 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:28:05,713 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:28:05,713 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:28:06,654 [DEBUG] yfinance:199: crumb = '.sWl1BLMyh1'
+2025-05-11 20:28:06,655 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:28:06,655 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:28:06,989 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:28:06,989 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:28:06,990 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:28:07,000 [DEBUG] yfinance:281: BTC-USD: yfinance received OHLC data: 2025-04-11 00:00:00 -> 2025-05-10 00:00:00
+2025-05-11 20:28:07,003 [DEBUG] yfinance:318: BTC-USD: OHLC after cleaning: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:28:07,010 [DEBUG] yfinance:388: BTC-USD: OHLC after combining events: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:28:07,016 [DEBUG] yfinance:467: BTC-USD: yfinance returning OHLC: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:28:07,016 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:28:07,016 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:28:07,019 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:28:07,021 [ERROR] crypto_analysis:300: Error fetching price data for BTC-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:28:07,025 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:28:07,025 [DEBUG] crypto_analysis:261: Fetching data for ETH-USD
+2025-05-11 20:28:07,025 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:28:07,026 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:28:07,026 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:28:07,026 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['ETH-USD', 1, 0])
+2025-05-11 20:28:07,026 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:28:07,026 [DEBUG] yfinance:165: ETH-USD: Yahoo GET parameters: {'period1': '2025-04-11 00:00:00+00:00', 'period2': '2025-05-11 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:28:07,027 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:28:07,027 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:28:07,027 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/ETH-USD
+2025-05-11 20:28:07,027 [DEBUG] yfinance:344: params=frozendict.frozendict({'period1': 1744329600, 'period2': 1746921600, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-05-11 20:28:07,027 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:28:07,027 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:28:07,027 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:28:07,318 [DEBUG] yfinance:179: reusing crumb
+2025-05-11 20:28:07,319 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:28:07,319 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:28:07,659 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:28:07,660 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:28:07,660 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:28:07,663 [DEBUG] yfinance:281: ETH-USD: yfinance received OHLC data: 2025-04-11 00:00:00 -> 2025-05-10 00:00:00
+2025-05-11 20:28:07,665 [DEBUG] yfinance:318: ETH-USD: OHLC after cleaning: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:28:07,669 [DEBUG] yfinance:388: ETH-USD: OHLC after combining events: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:28:07,675 [DEBUG] yfinance:467: ETH-USD: yfinance returning OHLC: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:28:07,675 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:28:07,676 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:28:07,678 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:28:07,680 [ERROR] crypto_analysis:300: Error fetching price data for ETH-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:28:07,681 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:28:07,681 [INFO] crypto_analysis:412: Fetching options data for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:28:07,681 [INFO] crypto_analysis:439: Fetching options chain for BTC from Deribit
+2025-05-11 20:28:07,685 [DEBUG] urllib3.connectionpool:1049: Starting new HTTPS connection (1): www.deribit.com:443
+2025-05-11 20:28:08,220 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=BTC&kind=option&expired=false HTTP/1.1" 200 491041
+2025-05-11 20:28:08,661 [INFO] crypto_analysis:351: Retrieved 734 instruments for BTC
+2025-05-11 20:28:08,661 [INFO] crypto_analysis:448: Found 734 instruments for BTC
+2025-05-11 20:28:08,662 [INFO] crypto_analysis:459: First 10 expiry dates for BTC: ['2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12']
+2025-05-11 20:28:08,668 [INFO] crypto_analysis:474: Filtered to 0 instruments within date range
+2025-05-11 20:28:08,703 [WARNING] crypto_analysis:525: No valid options data retrieved for BTC
+2025-05-11 20:28:08,705 [INFO] crypto_analysis:439: Fetching options chain for ETH from Deribit
+2025-05-11 20:28:08,815 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=ETH&kind=option&expired=false HTTP/1.1" 200 478259
+2025-05-11 20:28:08,889 [INFO] crypto_analysis:351: Retrieved 718 instruments for ETH
+2025-05-11 20:28:08,890 [INFO] crypto_analysis:448: Found 718 instruments for ETH
+2025-05-11 20:28:08,891 [INFO] crypto_analysis:459: First 10 expiry dates for ETH: ['2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12']
+2025-05-11 20:28:08,895 [INFO] crypto_analysis:474: Filtered to 0 instruments within date range
+2025-05-11 20:28:08,896 [WARNING] crypto_analysis:525: No valid options data retrieved for ETH
+2025-05-11 20:28:08,897 [INFO] crypto_analysis:230: Fetched price data for 0/2 symbols
+2025-05-11 20:28:08,897 [INFO] crypto_analysis:232: Fetched options data for 0/2 symbols
+2025-05-11 20:28:08,897 [INFO] crypto_analysis:647: Step 2: Analyzing volatility
+2025-05-11 20:28:08,897 [INFO] crypto_analysis:253: Initializing volatility analyzer
+2025-05-11 20:28:08,897 [DEBUG] crypto_analysis:92: Input validation completed successfully
+2025-05-11 20:28:08,897 [INFO] crypto_analysis:61: Initialized CryptoVolatilityAnalyzer with 2 symbols
+2025-05-11 20:28:08,897 [INFO] crypto_analysis:263: Analyzing volatility for all symbols
+2025-05-11 20:28:08,898 [INFO] crypto_analysis:425: Analyzing volatility for 2 symbols
+2025-05-11 20:28:08,898 [WARNING] crypto_analysis:332: Empty price data for BTC-USD
+2025-05-11 20:28:08,898 [WARNING] crypto_analysis:332: Empty price data for ETH-USD
+2025-05-11 20:28:08,899 [INFO] crypto_analysis:279: Completed volatility analysis for 0/2 symbols
+2025-05-11 20:28:08,899 [INFO] crypto_analysis:652: Step 3: Analyzing options
+2025-05-11 20:28:08,899 [INFO] crypto_analysis:308: Initializing options analyzer
+2025-05-11 20:28:08,899 [DEBUG] crypto_analysis:123: Input validation completed successfully
+2025-05-11 20:28:08,899 [INFO] crypto_analysis:89: Initialized OptionsAnalyzer with 2 symbols
+2025-05-11 20:28:08,899 [INFO] crypto_analysis:315: Analyzing options for all symbols
+2025-05-11 20:28:08,899 [INFO] crypto_analysis:873: Analyzing options for 2 symbols
+2025-05-11 20:28:08,899 [WARNING] crypto_analysis:503: Empty data for BTC-USD
+2025-05-11 20:28:08,899 [WARNING] crypto_analysis:503: Empty data for ETH-USD
+2025-05-11 20:28:08,900 [INFO] crypto_analysis:331: Completed options analysis for 0/2 symbols
+2025-05-11 20:28:08,900 [INFO] crypto_analysis:659: Step 4: Generating visualizations
+2025-05-11 20:28:08,900 [ERROR] crypto_analysis:349: No analysis results available, perform analysis first
+2025-05-11 20:28:08,900 [ERROR] crypto_analysis:382: Error generating visualizations: No analysis results available, perform analysis first
+2025-05-11 20:28:08,902 [DEBUG] crypto_analysis:383: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 350, in generate_visualizations
+    raise AnalysisSystemError("No analysis results available, perform analysis first")
+analysis_system.AnalysisSystemError: No analysis results available, perform analysis first
+
+2025-05-11 20:28:08,902 [ERROR] crypto_analysis:702: Error in analysis pipeline: Failed to generate visualizations: No analysis results available, perform analysis first
+2025-05-11 20:28:08,903 [DEBUG] crypto_analysis:703: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 350, in generate_visualizations
+    raise AnalysisSystemError("No analysis results available, perform analysis first")
+analysis_system.AnalysisSystemError: No analysis results available, perform analysis first
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 660, in run_analysis
+    visualization_results = self.generate_visualizations()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 384, in generate_visualizations
+    raise AnalysisSystemError(f"Failed to generate visualizations: {str(e)}")
+analysis_system.AnalysisSystemError: Failed to generate visualizations: No analysis results available, perform analysis first
+
+2025-05-11 20:28:08,903 [DEBUG] crypto_analysis:715: Cleaning up resources
+2025-05-11 20:28:08,903 [DEBUG] crypto_analysis:680: Cleaning up resources
+2025-05-11 20:28:08,933 [DEBUG] crypto_analysis:1103: Cleaning up resources
+2025-05-11 20:28:08,969 [ERROR] crypto_analysis:171: Analysis pipeline failed: Failed to generate visualizations: No analysis results available, perform analysis first
+2025-05-11 20:29:12,238 [WARNING] crypto_analysis:173: Configuration issue: API credentials required for production environment.
+2025-05-11 20:29:13,418 [INFO] crypto_analysis:114: Starting Crypto Volatility and Options Analysis System
+2025-05-11 20:29:13,418 [INFO] crypto_analysis:129: No symbols specified, using default: ['BTC-USD', 'ETH-USD']
+2025-05-11 20:29:13,418 [INFO] crypto_analysis:115: Initialized VolatilityOptionsAnalysisSystem for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:29:13,418 [INFO] crypto_analysis:167: Running full analysis pipeline
+2025-05-11 20:29:13,418 [INFO] crypto_analysis:639: Starting analysis pipeline
+2025-05-11 20:29:13,418 [INFO] crypto_analysis:643: Step 1: Fetching data
+2025-05-11 20:29:13,418 [INFO] crypto_analysis:202: Initializing data fetcher
+2025-05-11 20:29:13,418 [INFO] crypto_analysis:81: Initialized CryptoDataFetcher with production environment
+2025-05-11 20:29:13,418 [INFO] crypto_analysis:211: Fetching data for 2 symbols
+2025-05-11 20:29:13,418 [INFO] crypto_analysis:625: Fetching all data for 2 symbols
+2025-05-11 20:29:13,418 [INFO] crypto_analysis:255: Fetching price data for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:29:13,418 [DEBUG] crypto_analysis:261: Fetching data for BTC-USD
+2025-05-11 20:29:13,419 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:29:13,419 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:29:13,419 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:29:13,421 [DEBUG] peewee:3319: ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-05-11 20:29:13,421 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['BTC-USD', 1, 0])
+2025-05-11 20:29:13,421 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:29:13,422 [DEBUG] yfinance:165: BTC-USD: Yahoo GET parameters: {'period1': '2025-04-11 00:00:00+00:00', 'period2': '2025-05-11 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:29:13,422 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:29:13,422 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:29:13,422 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/BTC-USD
+2025-05-11 20:29:13,422 [DEBUG] yfinance:344: params=frozendict.frozendict({'period1': 1744329600, 'period2': 1746921600, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-05-11 20:29:13,422 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:29:13,422 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:29:13,422 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:29:14,256 [DEBUG] yfinance:199: crumb = 'xb2MIeaAK5x'
+2025-05-11 20:29:14,257 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:29:14,257 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:29:14,599 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:29:14,600 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:29:14,600 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:29:14,607 [DEBUG] yfinance:281: BTC-USD: yfinance received OHLC data: 2025-04-11 00:00:00 -> 2025-05-10 00:00:00
+2025-05-11 20:29:14,609 [DEBUG] yfinance:318: BTC-USD: OHLC after cleaning: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:29:14,613 [DEBUG] yfinance:388: BTC-USD: OHLC after combining events: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:29:14,618 [DEBUG] yfinance:467: BTC-USD: yfinance returning OHLC: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:29:14,619 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:29:14,619 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:29:14,622 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:29:14,624 [ERROR] crypto_analysis:300: Error fetching price data for BTC-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:29:14,627 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:29:14,628 [DEBUG] crypto_analysis:261: Fetching data for ETH-USD
+2025-05-11 20:29:14,628 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:29:14,628 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:29:14,628 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:29:14,628 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['ETH-USD', 1, 0])
+2025-05-11 20:29:14,629 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:29:14,629 [DEBUG] yfinance:165: ETH-USD: Yahoo GET parameters: {'period1': '2025-04-11 00:00:00+00:00', 'period2': '2025-05-11 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:29:14,629 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:29:14,629 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:29:14,629 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/ETH-USD
+2025-05-11 20:29:14,629 [DEBUG] yfinance:344: params=frozendict.frozendict({'period1': 1744329600, 'period2': 1746921600, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-05-11 20:29:14,629 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:29:14,629 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:29:14,629 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:29:20,682 [DEBUG] yfinance:179: reusing crumb
+2025-05-11 20:29:20,683 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:29:20,683 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:29:21,031 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:29:21,031 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:29:21,032 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:29:21,035 [DEBUG] yfinance:281: ETH-USD: yfinance received OHLC data: 2025-04-11 00:00:00 -> 2025-05-10 00:00:00
+2025-05-11 20:29:21,036 [DEBUG] yfinance:318: ETH-USD: OHLC after cleaning: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:29:21,040 [DEBUG] yfinance:388: ETH-USD: OHLC after combining events: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:29:21,043 [DEBUG] yfinance:467: ETH-USD: yfinance returning OHLC: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:29:21,043 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:29:21,043 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:29:21,045 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:29:21,046 [ERROR] crypto_analysis:300: Error fetching price data for ETH-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:29:21,046 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:29:21,047 [INFO] crypto_analysis:412: Fetching options data for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:29:21,047 [INFO] crypto_analysis:439: Fetching options chain for BTC from Deribit
+2025-05-11 20:29:21,050 [DEBUG] urllib3.connectionpool:1049: Starting new HTTPS connection (1): www.deribit.com:443
+2025-05-11 20:29:21,579 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=BTC&kind=option&expired=false HTTP/1.1" 200 491041
+2025-05-11 20:29:22,027 [INFO] crypto_analysis:351: Retrieved 734 instruments for BTC
+2025-05-11 20:29:22,027 [INFO] crypto_analysis:448: Found 734 instruments for BTC
+2025-05-11 20:29:22,028 [INFO] crypto_analysis:459: First 10 expiry dates for BTC: ['2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12']
+2025-05-11 20:29:22,034 [INFO] crypto_analysis:474: Filtered to 0 instruments within date range
+2025-05-11 20:29:22,069 [WARNING] crypto_analysis:525: No valid options data retrieved for BTC
+2025-05-11 20:29:22,070 [INFO] crypto_analysis:439: Fetching options chain for ETH from Deribit
+2025-05-11 20:29:22,179 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=ETH&kind=option&expired=false HTTP/1.1" 200 478257
+2025-05-11 20:29:22,255 [INFO] crypto_analysis:351: Retrieved 718 instruments for ETH
+2025-05-11 20:29:22,256 [INFO] crypto_analysis:448: Found 718 instruments for ETH
+2025-05-11 20:29:22,256 [INFO] crypto_analysis:459: First 10 expiry dates for ETH: ['2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12']
+2025-05-11 20:29:22,261 [INFO] crypto_analysis:474: Filtered to 0 instruments within date range
+2025-05-11 20:29:22,262 [WARNING] crypto_analysis:525: No valid options data retrieved for ETH
+2025-05-11 20:29:22,263 [INFO] crypto_analysis:230: Fetched price data for 0/2 symbols
+2025-05-11 20:29:22,263 [INFO] crypto_analysis:232: Fetched options data for 0/2 symbols
+2025-05-11 20:29:22,263 [INFO] crypto_analysis:647: Step 2: Analyzing volatility
+2025-05-11 20:29:22,263 [INFO] crypto_analysis:253: Initializing volatility analyzer
+2025-05-11 20:29:22,263 [DEBUG] crypto_analysis:92: Input validation completed successfully
+2025-05-11 20:29:22,263 [INFO] crypto_analysis:61: Initialized CryptoVolatilityAnalyzer with 2 symbols
+2025-05-11 20:29:22,264 [INFO] crypto_analysis:263: Analyzing volatility for all symbols
+2025-05-11 20:29:22,264 [INFO] crypto_analysis:425: Analyzing volatility for 2 symbols
+2025-05-11 20:29:22,264 [WARNING] crypto_analysis:332: Empty price data for BTC-USD
+2025-05-11 20:29:22,264 [WARNING] crypto_analysis:332: Empty price data for ETH-USD
+2025-05-11 20:29:22,265 [INFO] crypto_analysis:279: Completed volatility analysis for 0/2 symbols
+2025-05-11 20:29:22,265 [INFO] crypto_analysis:652: Step 3: Analyzing options
+2025-05-11 20:29:22,265 [INFO] crypto_analysis:308: Initializing options analyzer
+2025-05-11 20:29:22,265 [DEBUG] crypto_analysis:123: Input validation completed successfully
+2025-05-11 20:29:22,265 [INFO] crypto_analysis:89: Initialized OptionsAnalyzer with 2 symbols
+2025-05-11 20:29:22,265 [INFO] crypto_analysis:315: Analyzing options for all symbols
+2025-05-11 20:29:22,265 [INFO] crypto_analysis:873: Analyzing options for 2 symbols
+2025-05-11 20:29:22,266 [WARNING] crypto_analysis:503: Empty data for BTC-USD
+2025-05-11 20:29:22,266 [WARNING] crypto_analysis:503: Empty data for ETH-USD
+2025-05-11 20:29:22,266 [INFO] crypto_analysis:331: Completed options analysis for 0/2 symbols
+2025-05-11 20:29:22,266 [INFO] crypto_analysis:659: Step 4: Generating visualizations
+2025-05-11 20:29:22,266 [ERROR] crypto_analysis:349: No analysis results available, perform analysis first
+2025-05-11 20:29:22,266 [ERROR] crypto_analysis:382: Error generating visualizations: No analysis results available, perform analysis first
+2025-05-11 20:29:22,268 [DEBUG] crypto_analysis:383: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 350, in generate_visualizations
+    raise AnalysisSystemError("No analysis results available, perform analysis first")
+analysis_system.AnalysisSystemError: No analysis results available, perform analysis first
+
+2025-05-11 20:29:22,268 [ERROR] crypto_analysis:702: Error in analysis pipeline: Failed to generate visualizations: No analysis results available, perform analysis first
+2025-05-11 20:29:22,268 [DEBUG] crypto_analysis:703: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 350, in generate_visualizations
+    raise AnalysisSystemError("No analysis results available, perform analysis first")
+analysis_system.AnalysisSystemError: No analysis results available, perform analysis first
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 660, in run_analysis
+    visualization_results = self.generate_visualizations()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 384, in generate_visualizations
+    raise AnalysisSystemError(f"Failed to generate visualizations: {str(e)}")
+analysis_system.AnalysisSystemError: Failed to generate visualizations: No analysis results available, perform analysis first
+
+2025-05-11 20:29:22,269 [DEBUG] crypto_analysis:715: Cleaning up resources
+2025-05-11 20:29:22,269 [DEBUG] crypto_analysis:680: Cleaning up resources
+2025-05-11 20:29:22,299 [DEBUG] crypto_analysis:1103: Cleaning up resources
+2025-05-11 20:29:22,336 [ERROR] crypto_analysis:171: Analysis pipeline failed: Failed to generate visualizations: No analysis results available, perform analysis first
+2025-05-11 20:31:10,622 [INFO] crypto_analysis:114: Starting Crypto Volatility and Options Analysis System
+2025-05-11 20:31:10,622 [INFO] crypto_analysis:129: No symbols specified, using default: ['BTC-USD', 'ETH-USD']
+2025-05-11 20:31:10,622 [INFO] crypto_analysis:115: Initialized VolatilityOptionsAnalysisSystem for 2 symbols from 2025-04-12 to 2025-05-12
+2025-05-11 20:31:10,622 [INFO] crypto_analysis:167: Running full analysis pipeline
+2025-05-11 20:31:10,622 [INFO] crypto_analysis:639: Starting analysis pipeline
+2025-05-11 20:31:10,622 [INFO] crypto_analysis:643: Step 1: Fetching data
+2025-05-11 20:31:10,622 [INFO] crypto_analysis:202: Initializing data fetcher
+2025-05-11 20:31:10,623 [INFO] crypto_analysis:81: Initialized CryptoDataFetcher with production environment
+2025-05-11 20:31:10,623 [INFO] crypto_analysis:211: Fetching data for 2 symbols
+2025-05-11 20:31:10,623 [INFO] crypto_analysis:625: Fetching all data for 2 symbols
+2025-05-11 20:31:10,623 [INFO] crypto_analysis:255: Fetching price data for 2 symbols from 2025-04-12 to 2025-05-12
+2025-05-11 20:31:10,623 [DEBUG] crypto_analysis:261: Fetching data for BTC-USD
+2025-05-11 20:31:10,623 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:31:10,623 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:31:10,623 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:31:10,625 [DEBUG] peewee:3319: ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-05-11 20:31:10,625 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['BTC-USD', 1, 0])
+2025-05-11 20:31:10,626 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:31:10,626 [DEBUG] yfinance:165: BTC-USD: Yahoo GET parameters: {'period1': '2025-04-12 00:00:00+00:00', 'period2': '2025-05-12 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:31:10,626 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:31:10,626 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:31:10,626 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/BTC-USD
+2025-05-11 20:31:10,626 [DEBUG] yfinance:344: params={'period1': 1744416000, 'period2': 1747008000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:31:10,626 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:31:10,626 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:31:10,626 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:31:11,569 [DEBUG] yfinance:199: crumb = 'ITodSNy0T2o'
+2025-05-11 20:31:11,569 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:31:11,570 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:31:11,913 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:31:11,913 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:31:11,913 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:31:11,919 [DEBUG] yfinance:281: BTC-USD: yfinance received OHLC data: 2025-04-12 00:00:00 -> 2025-05-11 16:59:00
+2025-05-11 20:31:11,922 [DEBUG] yfinance:318: BTC-USD: OHLC after cleaning: 2025-04-12 00:00:00+00:00 -> 2025-05-11 16:59:00+00:00
+2025-05-11 20:31:11,927 [DEBUG] yfinance:388: BTC-USD: OHLC after combining events: 2025-04-12 00:00:00+00:00 -> 2025-05-11 00:00:00+00:00
+2025-05-11 20:31:11,933 [DEBUG] yfinance:467: BTC-USD: yfinance returning OHLC: 2025-04-12 00:00:00+00:00 -> 2025-05-11 00:00:00+00:00
+2025-05-11 20:31:11,934 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:31:11,934 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:31:11,937 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:31:11,939 [ERROR] crypto_analysis:300: Error fetching price data for BTC-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:31:11,943 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:31:11,943 [DEBUG] crypto_analysis:261: Fetching data for ETH-USD
+2025-05-11 20:31:11,943 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:31:11,944 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:31:11,946 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:31:11,946 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['ETH-USD', 1, 0])
+2025-05-11 20:31:11,947 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:31:11,947 [DEBUG] yfinance:165: ETH-USD: Yahoo GET parameters: {'period1': '2025-04-12 00:00:00+00:00', 'period2': '2025-05-12 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:31:11,947 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:31:11,947 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:31:11,947 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/ETH-USD
+2025-05-11 20:31:11,947 [DEBUG] yfinance:344: params={'period1': 1744416000, 'period2': 1747008000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:31:11,947 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:31:11,947 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:31:11,947 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:31:12,257 [DEBUG] yfinance:179: reusing crumb
+2025-05-11 20:31:12,257 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:31:12,258 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:31:12,626 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:31:12,626 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:31:12,626 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:31:12,627 [DEBUG] yfinance:281: ETH-USD: yfinance received OHLC data: 2025-04-12 00:00:00 -> 2025-05-11 16:59:00
+2025-05-11 20:31:12,628 [DEBUG] yfinance:318: ETH-USD: OHLC after cleaning: 2025-04-12 00:00:00+00:00 -> 2025-05-11 16:59:00+00:00
+2025-05-11 20:31:12,631 [DEBUG] yfinance:388: ETH-USD: OHLC after combining events: 2025-04-12 00:00:00+00:00 -> 2025-05-11 00:00:00+00:00
+2025-05-11 20:31:12,634 [DEBUG] yfinance:467: ETH-USD: yfinance returning OHLC: 2025-04-12 00:00:00+00:00 -> 2025-05-11 00:00:00+00:00
+2025-05-11 20:31:12,634 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:31:12,634 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:31:12,636 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:31:12,637 [ERROR] crypto_analysis:300: Error fetching price data for ETH-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:31:12,638 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:31:12,638 [INFO] crypto_analysis:412: Fetching options data for 2 symbols from 2025-04-12 to 2025-05-12
+2025-05-11 20:31:12,639 [INFO] crypto_analysis:439: Fetching options chain for BTC from Deribit
+2025-05-11 20:31:12,641 [DEBUG] urllib3.connectionpool:1049: Starting new HTTPS connection (1): www.deribit.com:443
+2025-05-11 20:31:13,078 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=BTC&kind=option&expired=false HTTP/1.1" 200 9681
+2025-05-11 20:31:13,089 [INFO] crypto_analysis:351: Retrieved 734 instruments for BTC
+2025-05-11 20:31:13,090 [INFO] crypto_analysis:448: Found 734 instruments for BTC
+2025-05-11 20:31:13,090 [INFO] crypto_analysis:459: First 10 expiry dates for BTC: ['2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12']
+2025-05-11 20:31:13,095 [INFO] crypto_analysis:474: Filtered to 50 instruments within date range
+2025-05-11 20:31:13,234 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-92000-C HTTP/1.1" 200 423
+2025-05-11 20:31:13,339 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-92000-P HTTP/1.1" 200 420
+2025-05-11 20:31:13,446 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-94000-C HTTP/1.1" 200 429
+2025-05-11 20:31:13,553 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-94000-P HTTP/1.1" 200 424
+2025-05-11 20:31:13,765 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-96000-C HTTP/1.1" 200 427
+2025-05-11 20:31:13,873 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-96000-P HTTP/1.1" 200 424
+2025-05-11 20:31:13,982 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-98000-C HTTP/1.1" 200 429
+2025-05-11 20:31:14,091 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-98000-P HTTP/1.1" 200 434
+2025-05-11 20:31:14,200 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-99000-C HTTP/1.1" 200 432
+2025-05-11 20:31:14,763 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-99000-P HTTP/1.1" 200 446
+2025-05-11 20:31:14,874 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-100000-C HTTP/1.1" 200 433
+2025-05-11 20:31:14,991 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-100000-P HTTP/1.1" 200 452
+2025-05-11 20:31:15,102 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-101000-C HTTP/1.1" 200 432
+2025-05-11 20:31:15,212 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-101000-P HTTP/1.1" 200 445
+2025-05-11 20:31:15,764 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-102000-C HTTP/1.1" 200 442
+2025-05-11 20:31:15,875 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-102000-P HTTP/1.1" 200 446
+2025-05-11 20:31:15,985 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-102500-C HTTP/1.1" 200 414
+2025-05-11 20:31:16,100 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-102500-P HTTP/1.1" 200 439
+2025-05-11 20:31:16,214 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-103000-C HTTP/1.1" 200 444
+2025-05-11 20:31:16,771 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-103000-P HTTP/1.1" 200 447
+2025-05-11 20:31:16,884 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-103500-C HTTP/1.1" 200 432
+2025-05-11 20:31:16,999 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-103500-P HTTP/1.1" 200 436
+2025-05-11 20:31:17,109 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-104000-C HTTP/1.1" 200 451
+2025-05-11 20:31:17,219 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-104000-P HTTP/1.1" 200 449
+2025-05-11 20:31:17,774 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-104500-C HTTP/1.1" 200 428
+2025-05-11 20:31:17,885 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-104500-P HTTP/1.1" 200 434
+2025-05-11 20:31:17,998 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-105000-C HTTP/1.1" 200 448
+2025-05-11 20:31:18,110 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-105000-P HTTP/1.1" 200 447
+2025-05-11 20:31:18,240 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-105500-C HTTP/1.1" 200 435
+2025-05-11 20:31:18,777 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-105500-P HTTP/1.1" 200 432
+2025-05-11 20:31:18,887 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-106000-C HTTP/1.1" 200 446
+2025-05-11 20:31:18,997 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-106000-P HTTP/1.1" 200 442
+2025-05-11 20:31:19,108 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-107000-C HTTP/1.1" 200 450
+2025-05-11 20:31:19,219 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-107000-P HTTP/1.1" 200 436
+2025-05-11 20:31:19,785 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-108000-C HTTP/1.1" 200 446
+2025-05-11 20:31:19,895 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-108000-P HTTP/1.1" 200 432
+2025-05-11 20:31:20,005 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-109000-C HTTP/1.1" 200 440
+2025-05-11 20:31:20,116 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-109000-P HTTP/1.1" 200 433
+2025-05-11 20:31:20,227 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-110000-C HTTP/1.1" 200 437
+2025-05-11 20:31:20,791 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-110000-P HTTP/1.1" 200 437
+2025-05-11 20:31:20,901 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-112000-C HTTP/1.1" 200 433
+2025-05-11 20:31:21,010 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-112000-P HTTP/1.1" 200 428
+2025-05-11 20:31:21,118 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-114000-C HTTP/1.1" 200 417
+2025-05-11 20:31:21,225 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-114000-P HTTP/1.1" 200 427
+2025-05-11 20:31:21,794 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-116000-C HTTP/1.1" 200 420
+2025-05-11 20:31:21,908 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-116000-P HTTP/1.1" 200 425
+2025-05-11 20:31:22,018 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-118000-C HTTP/1.1" 200 410
+2025-05-11 20:31:22,125 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-118000-P HTTP/1.1" 200 423
+2025-05-11 20:31:22,235 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-120000-C HTTP/1.1" 200 414
+2025-05-11 20:31:22,799 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-120000-P HTTP/1.1" 200 426
+2025-05-11 20:31:22,803 [ERROR] crypto_analysis:529: Error fetching options data for BTC-USD: Can only use .dt accessor with datetimelike values
+2025-05-11 20:31:22,805 [DEBUG] crypto_analysis:530: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 516, in fetch_options_data
+    df['time_to_expiry'] = (df['expiration'] - datetime.now().date()).dt.days / 365.0
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/accessor.py", line 224, in __get__
+    accessor_obj = self._accessor(obj)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/indexes/accessors.py", line 643, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+
+2025-05-11 20:31:22,805 [INFO] crypto_analysis:439: Fetching options chain for ETH from Deribit
+2025-05-11 20:31:22,930 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=ETH&kind=option&expired=false HTTP/1.1" 200 9756
+2025-05-11 20:31:22,936 [INFO] crypto_analysis:351: Retrieved 718 instruments for ETH
+2025-05-11 20:31:22,936 [INFO] crypto_analysis:448: Found 718 instruments for ETH
+2025-05-11 20:31:22,936 [INFO] crypto_analysis:459: First 10 expiry dates for ETH: ['2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12']
+2025-05-11 20:31:22,938 [INFO] crypto_analysis:474: Filtered to 80 instruments within date range
+2025-05-11 20:31:23,042 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1400-C HTTP/1.1" 200 412
+2025-05-11 20:31:23,148 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1400-P HTTP/1.1" 200 394
+2025-05-11 20:31:23,254 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1500-C HTTP/1.1" 200 419
+2025-05-11 20:31:23,791 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1500-P HTTP/1.1" 200 412
+2025-05-11 20:31:23,898 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1600-C HTTP/1.1" 200 416
+2025-05-11 20:31:24,005 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1600-P HTTP/1.1" 200 410
+2025-05-11 20:31:24,112 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1700-C HTTP/1.1" 200 423
+2025-05-11 20:31:24,218 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1700-P HTTP/1.1" 200 419
+2025-05-11 20:31:24,793 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1800-C HTTP/1.1" 200 422
+2025-05-11 20:31:24,898 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1800-P HTTP/1.1" 200 428
+2025-05-11 20:31:25,006 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1850-C HTTP/1.1" 200 419
+2025-05-11 20:31:25,112 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1850-P HTTP/1.1" 200 429
+2025-05-11 20:31:25,219 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1900-C HTTP/1.1" 200 425
+2025-05-11 20:31:25,793 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1900-P HTTP/1.1" 200 433
+2025-05-11 20:31:25,899 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1950-C HTTP/1.1" 200 426
+2025-05-11 20:31:26,004 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1950-P HTTP/1.1" 200 430
+2025-05-11 20:31:26,110 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2000-C HTTP/1.1" 200 427
+2025-05-11 20:31:26,216 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2000-P HTTP/1.1" 200 442
+2025-05-11 20:31:26,805 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2050-C HTTP/1.1" 200 425
+2025-05-11 20:31:26,912 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2050-P HTTP/1.1" 200 436
+2025-05-11 20:31:27,021 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2100-C HTTP/1.1" 200 421
+2025-05-11 20:31:27,130 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2100-P HTTP/1.1" 200 439
+2025-05-11 20:31:27,240 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2150-C HTTP/1.1" 200 428
+2025-05-11 20:31:27,805 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2150-P HTTP/1.1" 200 437
+2025-05-11 20:31:27,913 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2175-C HTTP/1.1" 200 427
+2025-05-11 20:31:28,021 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2175-P HTTP/1.1" 200 439
+2025-05-11 20:31:28,130 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2200-C HTTP/1.1" 200 433
+2025-05-11 20:31:28,239 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2200-P HTTP/1.1" 200 438
+2025-05-11 20:31:28,808 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2225-C HTTP/1.1" 200 427
+2025-05-11 20:31:28,916 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2225-P HTTP/1.1" 200 439
+2025-05-11 20:31:29,025 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2250-C HTTP/1.1" 200 425
+2025-05-11 20:31:29,133 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2250-P HTTP/1.1" 200 436
+2025-05-11 20:31:29,242 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2275-C HTTP/1.1" 200 427
+2025-05-11 20:31:29,820 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2275-P HTTP/1.1" 200 434
+2025-05-11 20:31:29,929 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2300-C HTTP/1.1" 200 440
+2025-05-11 20:31:30,038 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2300-P HTTP/1.1" 200 445
+2025-05-11 20:31:30,146 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2325-C HTTP/1.1" 200 443
+2025-05-11 20:31:30,256 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2325-P HTTP/1.1" 200 446
+2025-05-11 20:31:30,827 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2350-C HTTP/1.1" 200 440
+2025-05-11 20:31:30,935 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2350-P HTTP/1.1" 200 438
+2025-05-11 20:31:31,044 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2375-C HTTP/1.1" 200 440
+2025-05-11 20:31:31,149 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2375-P HTTP/1.1" 200 441
+2025-05-11 20:31:31,256 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2400-C HTTP/1.1" 200 438
+2025-05-11 20:31:31,826 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2400-P HTTP/1.1" 200 441
+2025-05-11 20:31:31,935 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2425-C HTTP/1.1" 200 444
+2025-05-11 20:31:32,045 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2425-P HTTP/1.1" 200 446
+2025-05-11 20:31:32,150 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2450-C HTTP/1.1" 200 445
+2025-05-11 20:31:32,254 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2450-P HTTP/1.1" 200 448
+2025-05-11 20:31:32,828 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2475-C HTTP/1.1" 200 440
+2025-05-11 20:31:32,933 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2475-P HTTP/1.1" 200 448
+2025-05-11 20:31:33,045 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2500-C HTTP/1.1" 200 443
+2025-05-11 20:31:33,162 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2500-P HTTP/1.1" 200 449
+2025-05-11 20:31:33,266 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2525-C HTTP/1.1" 200 440
+2025-05-11 20:31:33,841 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2525-P HTTP/1.1" 200 449
+2025-05-11 20:31:33,952 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2550-C HTTP/1.1" 200 443
+2025-05-11 20:31:34,060 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2550-P HTTP/1.1" 200 449
+2025-05-11 20:31:34,164 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2575-C HTTP/1.1" 200 445
+2025-05-11 20:31:34,271 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2575-P HTTP/1.1" 200 449
+2025-05-11 20:31:34,843 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2600-C HTTP/1.1" 200 437
+2025-05-11 20:31:34,948 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2600-P HTTP/1.1" 200 438
+2025-05-11 20:31:35,053 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2625-C HTTP/1.1" 200 441
+2025-05-11 20:31:35,157 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2625-P HTTP/1.1" 200 429
+2025-05-11 20:31:35,262 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2650-C HTTP/1.1" 200 438
+2025-05-11 20:31:35,843 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2650-P HTTP/1.1" 200 439
+2025-05-11 20:31:35,950 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2675-C HTTP/1.1" 200 434
+2025-05-11 20:31:36,059 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2675-P HTTP/1.1" 200 431
+2025-05-11 20:31:36,163 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2700-C HTTP/1.1" 200 438
+2025-05-11 20:31:36,269 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2700-P HTTP/1.1" 200 445
+2025-05-11 20:31:36,844 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2750-C HTTP/1.1" 200 444
+2025-05-11 20:31:36,950 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2750-P HTTP/1.1" 200 445
+2025-05-11 20:31:37,071 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2800-C HTTP/1.1" 200 436
+2025-05-11 20:31:37,184 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2800-P HTTP/1.1" 200 424
+2025-05-11 20:31:37,293 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2850-C HTTP/1.1" 200 435
+2025-05-11 20:31:37,856 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2850-P HTTP/1.1" 200 423
+2025-05-11 20:31:37,964 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2900-C HTTP/1.1" 200 432
+2025-05-11 20:31:38,071 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2900-P HTTP/1.1" 200 417
+2025-05-11 20:31:38,189 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2950-C HTTP/1.1" 200 435
+2025-05-11 20:31:38,302 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2950-P HTTP/1.1" 200 415
+2025-05-11 20:31:38,852 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-3000-C HTTP/1.1" 200 433
+2025-05-11 20:31:38,972 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-3000-P HTTP/1.1" 200 417
+2025-05-11 20:31:38,986 [ERROR] crypto_analysis:529: Error fetching options data for ETH-USD: Can only use .dt accessor with datetimelike values
+2025-05-11 20:31:38,990 [DEBUG] crypto_analysis:530: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 516, in fetch_options_data
+    df['time_to_expiry'] = (df['expiration'] - datetime.now().date()).dt.days / 365.0
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/accessor.py", line 224, in __get__
+    accessor_obj = self._accessor(obj)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/indexes/accessors.py", line 643, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+
+2025-05-11 20:31:39,000 [INFO] crypto_analysis:230: Fetched price data for 0/2 symbols
+2025-05-11 20:31:39,000 [INFO] crypto_analysis:232: Fetched options data for 0/2 symbols
+2025-05-11 20:31:39,000 [INFO] crypto_analysis:647: Step 2: Analyzing volatility
+2025-05-11 20:31:39,000 [INFO] crypto_analysis:253: Initializing volatility analyzer
+2025-05-11 20:31:39,001 [DEBUG] crypto_analysis:92: Input validation completed successfully
+2025-05-11 20:31:39,001 [INFO] crypto_analysis:61: Initialized CryptoVolatilityAnalyzer with 2 symbols
+2025-05-11 20:31:39,001 [INFO] crypto_analysis:263: Analyzing volatility for all symbols
+2025-05-11 20:31:39,001 [INFO] crypto_analysis:425: Analyzing volatility for 2 symbols
+2025-05-11 20:31:39,002 [WARNING] crypto_analysis:332: Empty price data for BTC-USD
+2025-05-11 20:31:39,002 [WARNING] crypto_analysis:332: Empty price data for ETH-USD
+2025-05-11 20:31:39,002 [INFO] crypto_analysis:279: Completed volatility analysis for 0/2 symbols
+2025-05-11 20:31:39,003 [INFO] crypto_analysis:652: Step 3: Analyzing options
+2025-05-11 20:31:39,003 [INFO] crypto_analysis:308: Initializing options analyzer
+2025-05-11 20:31:39,003 [DEBUG] crypto_analysis:123: Input validation completed successfully
+2025-05-11 20:31:39,003 [INFO] crypto_analysis:89: Initialized OptionsAnalyzer with 2 symbols
+2025-05-11 20:31:39,003 [INFO] crypto_analysis:315: Analyzing options for all symbols
+2025-05-11 20:31:39,003 [INFO] crypto_analysis:873: Analyzing options for 2 symbols
+2025-05-11 20:31:39,003 [WARNING] crypto_analysis:503: Empty data for BTC-USD
+2025-05-11 20:31:39,004 [WARNING] crypto_analysis:503: Empty data for ETH-USD
+2025-05-11 20:31:39,004 [INFO] crypto_analysis:331: Completed options analysis for 0/2 symbols
+2025-05-11 20:31:39,004 [INFO] crypto_analysis:659: Step 4: Generating visualizations
+2025-05-11 20:31:39,004 [ERROR] crypto_analysis:349: No analysis results available, perform analysis first
+2025-05-11 20:31:39,004 [ERROR] crypto_analysis:382: Error generating visualizations: No analysis results available, perform analysis first
+2025-05-11 20:31:39,007 [DEBUG] crypto_analysis:383: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 350, in generate_visualizations
+    raise AnalysisSystemError("No analysis results available, perform analysis first")
+analysis_system.AnalysisSystemError: No analysis results available, perform analysis first
+
+2025-05-11 20:31:39,008 [ERROR] crypto_analysis:702: Error in analysis pipeline: Failed to generate visualizations: No analysis results available, perform analysis first
+2025-05-11 20:31:39,009 [DEBUG] crypto_analysis:703: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 350, in generate_visualizations
+    raise AnalysisSystemError("No analysis results available, perform analysis first")
+analysis_system.AnalysisSystemError: No analysis results available, perform analysis first
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 660, in run_analysis
+    visualization_results = self.generate_visualizations()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 384, in generate_visualizations
+    raise AnalysisSystemError(f"Failed to generate visualizations: {str(e)}")
+analysis_system.AnalysisSystemError: Failed to generate visualizations: No analysis results available, perform analysis first
+
+2025-05-11 20:31:39,010 [DEBUG] crypto_analysis:715: Cleaning up resources
+2025-05-11 20:31:39,010 [DEBUG] crypto_analysis:680: Cleaning up resources
+2025-05-11 20:31:39,060 [DEBUG] crypto_analysis:1103: Cleaning up resources
+2025-05-11 20:31:39,098 [ERROR] crypto_analysis:171: Analysis pipeline failed: Failed to generate visualizations: No analysis results available, perform analysis first
+2025-05-11 20:34:02,850 [INFO] crypto_analysis:114: Starting Crypto Volatility and Options Analysis System
+2025-05-11 20:34:02,851 [INFO] crypto_analysis:129: No symbols specified, using default: ['BTC-USD', 'ETH-USD']
+2025-05-11 20:34:02,851 [INFO] crypto_analysis:115: Initialized VolatilityOptionsAnalysisSystem for 2 symbols from 2025-04-12 to 2025-05-12
+2025-05-11 20:34:02,851 [INFO] crypto_analysis:167: Running full analysis pipeline
+2025-05-11 20:34:02,851 [INFO] crypto_analysis:639: Starting analysis pipeline
+2025-05-11 20:34:02,851 [INFO] crypto_analysis:643: Step 1: Fetching data
+2025-05-11 20:34:02,851 [INFO] crypto_analysis:202: Initializing data fetcher
+2025-05-11 20:34:02,851 [INFO] crypto_analysis:81: Initialized CryptoDataFetcher with production environment
+2025-05-11 20:34:02,851 [INFO] crypto_analysis:211: Fetching data for 2 symbols
+2025-05-11 20:34:02,851 [INFO] crypto_analysis:626: Fetching all data for 2 symbols
+2025-05-11 20:34:02,851 [INFO] crypto_analysis:255: Fetching price data for 2 symbols from 2025-04-12 to 2025-05-12
+2025-05-11 20:34:02,851 [DEBUG] crypto_analysis:261: Fetching data for BTC-USD
+2025-05-11 20:34:02,851 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:34:02,851 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:34:02,852 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:34:02,854 [DEBUG] peewee:3319: ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-05-11 20:34:02,854 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['BTC-USD', 1, 0])
+2025-05-11 20:34:02,854 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:34:02,854 [DEBUG] yfinance:165: BTC-USD: Yahoo GET parameters: {'period1': '2025-04-12 00:00:00+00:00', 'period2': '2025-05-12 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:34:02,855 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:34:02,855 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:34:02,855 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/BTC-USD
+2025-05-11 20:34:02,855 [DEBUG] yfinance:344: params={'period1': 1744416000, 'period2': 1747008000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:34:02,855 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:34:02,855 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:34:02,855 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:34:03,846 [DEBUG] yfinance:199: crumb = 'RaMI4NzfnOg'
+2025-05-11 20:34:03,847 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:34:03,847 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:34:04,171 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:34:04,171 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:34:04,171 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:34:04,177 [DEBUG] yfinance:281: BTC-USD: yfinance received OHLC data: 2025-04-12 00:00:00 -> 2025-05-11 17:03:00
+2025-05-11 20:34:04,180 [DEBUG] yfinance:318: BTC-USD: OHLC after cleaning: 2025-04-12 00:00:00+00:00 -> 2025-05-11 17:03:00+00:00
+2025-05-11 20:34:04,185 [DEBUG] yfinance:388: BTC-USD: OHLC after combining events: 2025-04-12 00:00:00+00:00 -> 2025-05-11 00:00:00+00:00
+2025-05-11 20:34:04,191 [DEBUG] yfinance:467: BTC-USD: yfinance returning OHLC: 2025-04-12 00:00:00+00:00 -> 2025-05-11 00:00:00+00:00
+2025-05-11 20:34:04,191 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:34:04,191 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:34:04,194 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:34:04,196 [ERROR] crypto_analysis:300: Error fetching price data for BTC-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:34:04,199 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:34:04,200 [DEBUG] crypto_analysis:261: Fetching data for ETH-USD
+2025-05-11 20:34:04,200 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:34:04,200 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:34:04,202 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:34:04,203 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['ETH-USD', 1, 0])
+2025-05-11 20:34:04,203 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:34:04,203 [DEBUG] yfinance:165: ETH-USD: Yahoo GET parameters: {'period1': '2025-04-12 00:00:00+00:00', 'period2': '2025-05-12 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:34:04,203 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:34:04,203 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:34:04,203 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/ETH-USD
+2025-05-11 20:34:04,203 [DEBUG] yfinance:344: params={'period1': 1744416000, 'period2': 1747008000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:34:04,204 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:34:04,204 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:34:04,204 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:34:04,509 [DEBUG] yfinance:179: reusing crumb
+2025-05-11 20:34:04,509 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:34:04,510 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:34:04,854 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:34:04,854 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:34:04,855 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:34:04,858 [DEBUG] yfinance:281: ETH-USD: yfinance received OHLC data: 2025-04-12 00:00:00 -> 2025-05-11 17:03:00
+2025-05-11 20:34:04,860 [DEBUG] yfinance:318: ETH-USD: OHLC after cleaning: 2025-04-12 00:00:00+00:00 -> 2025-05-11 17:03:00+00:00
+2025-05-11 20:34:04,865 [DEBUG] yfinance:388: ETH-USD: OHLC after combining events: 2025-04-12 00:00:00+00:00 -> 2025-05-11 00:00:00+00:00
+2025-05-11 20:34:04,868 [DEBUG] yfinance:467: ETH-USD: yfinance returning OHLC: 2025-04-12 00:00:00+00:00 -> 2025-05-11 00:00:00+00:00
+2025-05-11 20:34:04,868 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:34:04,868 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:34:04,870 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:34:04,871 [ERROR] crypto_analysis:300: Error fetching price data for ETH-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:34:04,871 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:34:04,872 [INFO] crypto_analysis:412: Fetching options data for 2 symbols from 2025-04-12 to 2025-05-12
+2025-05-11 20:34:04,872 [INFO] crypto_analysis:439: Fetching options chain for BTC from Deribit
+2025-05-11 20:34:04,875 [DEBUG] urllib3.connectionpool:1049: Starting new HTTPS connection (1): www.deribit.com:443
+2025-05-11 20:34:05,408 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=BTC&kind=option&expired=false HTTP/1.1" 200 491041
+2025-05-11 20:34:05,840 [INFO] crypto_analysis:351: Retrieved 734 instruments for BTC
+2025-05-11 20:34:05,841 [INFO] crypto_analysis:448: Found 734 instruments for BTC
+2025-05-11 20:34:05,841 [INFO] crypto_analysis:459: First 10 expiry dates for BTC: ['2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12']
+2025-05-11 20:34:05,848 [INFO] crypto_analysis:474: Filtered to 50 instruments within date range
+2025-05-11 20:34:05,985 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-92000-C HTTP/1.1" 200 424
+2025-05-11 20:34:06,095 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-92000-P HTTP/1.1" 200 422
+2025-05-11 20:34:06,200 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-94000-C HTTP/1.1" 200 427
+2025-05-11 20:34:06,309 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-94000-P HTTP/1.1" 200 422
+2025-05-11 20:34:06,412 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-96000-C HTTP/1.1" 200 424
+2025-05-11 20:34:06,998 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-96000-P HTTP/1.1" 200 425
+2025-05-11 20:34:07,108 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-98000-C HTTP/1.1" 200 432
+2025-05-11 20:34:07,216 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-98000-P HTTP/1.1" 200 439
+2025-05-11 20:34:07,323 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-99000-C HTTP/1.1" 200 434
+2025-05-11 20:34:07,433 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-99000-P HTTP/1.1" 200 449
+2025-05-11 20:34:08,003 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-100000-C HTTP/1.1" 200 434
+2025-05-11 20:34:08,115 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-100000-P HTTP/1.1" 200 452
+2025-05-11 20:34:08,226 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-101000-C HTTP/1.1" 200 434
+2025-05-11 20:34:08,337 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-101000-P HTTP/1.1" 200 443
+2025-05-11 20:34:08,447 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-102000-C HTTP/1.1" 200 438
+2025-05-11 20:34:09,012 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-102000-P HTTP/1.1" 200 448
+2025-05-11 20:34:09,123 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-102500-C HTTP/1.1" 200 420
+2025-05-11 20:34:09,236 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-102500-P HTTP/1.1" 200 437
+2025-05-11 20:34:09,347 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-103000-C HTTP/1.1" 200 448
+2025-05-11 20:34:09,459 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-103000-P HTTP/1.1" 200 447
+2025-05-11 20:34:10,008 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-103500-C HTTP/1.1" 200 430
+2025-05-11 20:34:10,118 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-103500-P HTTP/1.1" 200 435
+2025-05-11 20:34:10,229 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-104000-C HTTP/1.1" 200 450
+2025-05-11 20:34:10,340 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-104000-P HTTP/1.1" 200 448
+2025-05-11 20:34:10,450 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-104500-C HTTP/1.1" 200 427
+2025-05-11 20:34:11,019 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-104500-P HTTP/1.1" 200 437
+2025-05-11 20:34:11,143 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-105000-C HTTP/1.1" 200 450
+2025-05-11 20:34:11,254 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-105000-P HTTP/1.1" 200 450
+2025-05-11 20:34:11,363 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-105500-C HTTP/1.1" 200 431
+2025-05-11 20:34:11,470 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-105500-P HTTP/1.1" 200 433
+2025-05-11 20:34:12,018 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-106000-C HTTP/1.1" 200 447
+2025-05-11 20:34:12,133 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-106000-P HTTP/1.1" 200 442
+2025-05-11 20:34:12,243 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-107000-C HTTP/1.1" 200 447
+2025-05-11 20:34:12,353 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-107000-P HTTP/1.1" 200 436
+2025-05-11 20:34:12,464 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-108000-C HTTP/1.1" 200 440
+2025-05-11 20:34:13,034 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-108000-P HTTP/1.1" 200 436
+2025-05-11 20:34:13,144 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-109000-C HTTP/1.1" 200 442
+2025-05-11 20:34:13,256 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-109000-P HTTP/1.1" 200 437
+2025-05-11 20:34:13,367 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-110000-C HTTP/1.1" 200 435
+2025-05-11 20:34:13,477 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-110000-P HTTP/1.1" 200 436
+2025-05-11 20:34:14,037 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-112000-C HTTP/1.1" 200 432
+2025-05-11 20:34:14,148 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-112000-P HTTP/1.1" 200 431
+2025-05-11 20:34:14,258 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-114000-C HTTP/1.1" 200 420
+2025-05-11 20:34:14,372 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-114000-P HTTP/1.1" 200 429
+2025-05-11 20:34:14,483 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-116000-C HTTP/1.1" 200 422
+2025-05-11 20:34:15,042 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-116000-P HTTP/1.1" 200 433
+2025-05-11 20:34:15,159 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-118000-C HTTP/1.1" 200 410
+2025-05-11 20:34:15,269 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-118000-P HTTP/1.1" 200 426
+2025-05-11 20:34:15,380 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-120000-C HTTP/1.1" 200 414
+2025-05-11 20:34:15,490 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=BTC-12MAY25-120000-P HTTP/1.1" 200 424
+2025-05-11 20:34:15,510 [INFO] crypto_analysis:524: Successfully fetched data for 50 options for BTC
+2025-05-11 20:34:15,510 [INFO] crypto_analysis:439: Fetching options chain for ETH from Deribit
+2025-05-11 20:34:16,038 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=ETH&kind=option&expired=false HTTP/1.1" 200 478258
+2025-05-11 20:34:16,113 [INFO] crypto_analysis:351: Retrieved 718 instruments for ETH
+2025-05-11 20:34:16,115 [INFO] crypto_analysis:448: Found 718 instruments for ETH
+2025-05-11 20:34:16,115 [INFO] crypto_analysis:459: First 10 expiry dates for ETH: ['2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12', '2025-05-12']
+2025-05-11 20:34:16,120 [INFO] crypto_analysis:474: Filtered to 80 instruments within date range
+2025-05-11 20:34:16,225 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1400-C HTTP/1.1" 200 410
+2025-05-11 20:34:16,327 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1400-P HTTP/1.1" 200 394
+2025-05-11 20:34:16,431 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1500-C HTTP/1.1" 200 417
+2025-05-11 20:34:16,535 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1500-P HTTP/1.1" 200 409
+2025-05-11 20:34:17,047 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1600-C HTTP/1.1" 200 418
+2025-05-11 20:34:17,162 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1600-P HTTP/1.1" 200 412
+2025-05-11 20:34:17,268 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1700-C HTTP/1.1" 200 423
+2025-05-11 20:34:17,377 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1700-P HTTP/1.1" 200 419
+2025-05-11 20:34:17,485 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1800-C HTTP/1.1" 200 423
+2025-05-11 20:34:18,056 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1800-P HTTP/1.1" 200 433
+2025-05-11 20:34:18,164 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1850-C HTTP/1.1" 200 423
+2025-05-11 20:34:18,274 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1850-P HTTP/1.1" 200 434
+2025-05-11 20:34:18,383 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1900-C HTTP/1.1" 200 426
+2025-05-11 20:34:18,490 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1900-P HTTP/1.1" 200 434
+2025-05-11 20:34:19,049 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1950-C HTTP/1.1" 200 424
+2025-05-11 20:34:19,157 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-1950-P HTTP/1.1" 200 435
+2025-05-11 20:34:19,264 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2000-C HTTP/1.1" 200 428
+2025-05-11 20:34:19,371 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2000-P HTTP/1.1" 200 443
+2025-05-11 20:34:19,479 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2050-C HTTP/1.1" 200 427
+2025-05-11 20:34:20,063 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2050-P HTTP/1.1" 200 432
+2025-05-11 20:34:20,170 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2100-C HTTP/1.1" 200 422
+2025-05-11 20:34:20,278 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2100-P HTTP/1.1" 200 441
+2025-05-11 20:34:20,386 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2150-C HTTP/1.1" 200 428
+2025-05-11 20:34:20,493 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2150-P HTTP/1.1" 200 437
+2025-05-11 20:34:21,064 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2175-C HTTP/1.1" 200 419
+2025-05-11 20:34:21,170 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2175-P HTTP/1.1" 200 438
+2025-05-11 20:34:21,275 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2200-C HTTP/1.1" 200 427
+2025-05-11 20:34:21,380 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2200-P HTTP/1.1" 200 438
+2025-05-11 20:34:21,485 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2225-C HTTP/1.1" 200 427
+2025-05-11 20:34:22,075 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2225-P HTTP/1.1" 200 438
+2025-05-11 20:34:22,183 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2250-C HTTP/1.1" 200 426
+2025-05-11 20:34:22,291 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2250-P HTTP/1.1" 200 439
+2025-05-11 20:34:22,399 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2275-C HTTP/1.1" 200 424
+2025-05-11 20:34:22,507 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2275-P HTTP/1.1" 200 440
+2025-05-11 20:34:23,080 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2300-C HTTP/1.1" 200 444
+2025-05-11 20:34:23,192 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2300-P HTTP/1.1" 200 446
+2025-05-11 20:34:23,300 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2325-C HTTP/1.1" 200 441
+2025-05-11 20:34:23,408 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2325-P HTTP/1.1" 200 443
+2025-05-11 20:34:23,516 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2350-C HTTP/1.1" 200 442
+2025-05-11 20:34:24,071 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2350-P HTTP/1.1" 200 442
+2025-05-11 20:34:24,177 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2375-C HTTP/1.1" 200 440
+2025-05-11 20:34:24,284 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2375-P HTTP/1.1" 200 442
+2025-05-11 20:34:24,389 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2400-C HTTP/1.1" 200 438
+2025-05-11 20:34:24,495 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2400-P HTTP/1.1" 200 446
+2025-05-11 20:34:25,082 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2425-C HTTP/1.1" 200 441
+2025-05-11 20:34:25,190 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2425-P HTTP/1.1" 200 438
+2025-05-11 20:34:25,299 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2450-C HTTP/1.1" 200 448
+2025-05-11 20:34:25,406 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2450-P HTTP/1.1" 200 446
+2025-05-11 20:34:25,514 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2475-C HTTP/1.1" 200 445
+2025-05-11 20:34:26,087 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2475-P HTTP/1.1" 200 449
+2025-05-11 20:34:26,195 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2500-C HTTP/1.1" 200 448
+2025-05-11 20:34:26,301 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2500-P HTTP/1.1" 200 451
+2025-05-11 20:34:26,407 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2525-C HTTP/1.1" 200 442
+2025-05-11 20:34:26,512 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2525-P HTTP/1.1" 200 447
+2025-05-11 20:34:27,089 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2550-C HTTP/1.1" 200 450
+2025-05-11 20:34:27,194 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2550-P HTTP/1.1" 200 446
+2025-05-11 20:34:27,299 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2575-C HTTP/1.1" 200 442
+2025-05-11 20:34:27,407 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2575-P HTTP/1.1" 200 451
+2025-05-11 20:34:27,518 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2600-C HTTP/1.1" 200 436
+2025-05-11 20:34:28,088 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2600-P HTTP/1.1" 200 442
+2025-05-11 20:34:28,196 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2625-C HTTP/1.1" 200 439
+2025-05-11 20:34:28,305 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2625-P HTTP/1.1" 200 433
+2025-05-11 20:34:28,414 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2650-C HTTP/1.1" 200 436
+2025-05-11 20:34:28,521 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2650-P HTTP/1.1" 200 440
+2025-05-11 20:34:29,095 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2675-C HTTP/1.1" 200 433
+2025-05-11 20:34:29,201 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2675-P HTTP/1.1" 200 433
+2025-05-11 20:34:29,307 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2700-C HTTP/1.1" 200 438
+2025-05-11 20:34:29,413 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2700-P HTTP/1.1" 200 442
+2025-05-11 20:34:29,518 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2750-C HTTP/1.1" 200 442
+2025-05-11 20:34:30,094 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2750-P HTTP/1.1" 200 441
+2025-05-11 20:34:30,202 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2800-C HTTP/1.1" 200 438
+2025-05-11 20:34:30,310 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2800-P HTTP/1.1" 200 422
+2025-05-11 20:34:30,417 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2850-C HTTP/1.1" 200 427
+2025-05-11 20:34:30,525 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2850-P HTTP/1.1" 200 416
+2025-05-11 20:34:31,102 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2900-C HTTP/1.1" 200 433
+2025-05-11 20:34:31,208 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2900-P HTTP/1.1" 200 417
+2025-05-11 20:34:31,313 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2950-C HTTP/1.1" 200 431
+2025-05-11 20:34:31,417 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-2950-P HTTP/1.1" 200 415
+2025-05-11 20:34:31,521 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-3000-C HTTP/1.1" 200 434
+2025-05-11 20:34:32,095 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/ticker?instrument_name=ETH-12MAY25-3000-P HTTP/1.1" 200 416
+2025-05-11 20:34:32,118 [INFO] crypto_analysis:524: Successfully fetched data for 80 options for ETH
+2025-05-11 20:34:32,121 [INFO] crypto_analysis:230: Fetched price data for 0/2 symbols
+2025-05-11 20:34:32,121 [INFO] crypto_analysis:232: Fetched options data for 2/2 symbols
+2025-05-11 20:34:32,121 [INFO] crypto_analysis:647: Step 2: Analyzing volatility
+2025-05-11 20:34:32,122 [INFO] crypto_analysis:253: Initializing volatility analyzer
+2025-05-11 20:34:32,122 [DEBUG] crypto_analysis:92: Input validation completed successfully
+2025-05-11 20:34:32,122 [INFO] crypto_analysis:61: Initialized CryptoVolatilityAnalyzer with 2 symbols
+2025-05-11 20:34:32,122 [INFO] crypto_analysis:263: Analyzing volatility for all symbols
+2025-05-11 20:34:32,122 [INFO] crypto_analysis:425: Analyzing volatility for 2 symbols
+2025-05-11 20:34:32,122 [WARNING] crypto_analysis:332: Empty price data for BTC-USD
+2025-05-11 20:34:32,123 [WARNING] crypto_analysis:332: Empty price data for ETH-USD
+2025-05-11 20:34:32,123 [INFO] crypto_analysis:279: Completed volatility analysis for 0/2 symbols
+2025-05-11 20:34:32,123 [INFO] crypto_analysis:652: Step 3: Analyzing options
+2025-05-11 20:34:32,123 [INFO] crypto_analysis:308: Initializing options analyzer
+2025-05-11 20:34:32,124 [DEBUG] crypto_analysis:123: Input validation completed successfully
+2025-05-11 20:34:32,124 [INFO] crypto_analysis:89: Initialized OptionsAnalyzer with 2 symbols
+2025-05-11 20:34:32,124 [INFO] crypto_analysis:315: Analyzing options for all symbols
+2025-05-11 20:34:32,124 [INFO] crypto_analysis:873: Analyzing options for 2 symbols
+2025-05-11 20:34:32,124 [WARNING] crypto_analysis:503: Empty data for BTC-USD
+2025-05-11 20:34:32,124 [WARNING] crypto_analysis:503: Empty data for ETH-USD
+2025-05-11 20:34:32,124 [INFO] crypto_analysis:331: Completed options analysis for 0/2 symbols
+2025-05-11 20:34:32,124 [INFO] crypto_analysis:659: Step 4: Generating visualizations
+2025-05-11 20:34:32,124 [ERROR] crypto_analysis:349: No analysis results available, perform analysis first
+2025-05-11 20:34:32,124 [ERROR] crypto_analysis:382: Error generating visualizations: No analysis results available, perform analysis first
+2025-05-11 20:34:32,125 [DEBUG] crypto_analysis:383: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 350, in generate_visualizations
+    raise AnalysisSystemError("No analysis results available, perform analysis first")
+analysis_system.AnalysisSystemError: No analysis results available, perform analysis first
+
+2025-05-11 20:34:32,125 [ERROR] crypto_analysis:702: Error in analysis pipeline: Failed to generate visualizations: No analysis results available, perform analysis first
+2025-05-11 20:34:32,125 [DEBUG] crypto_analysis:703: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 350, in generate_visualizations
+    raise AnalysisSystemError("No analysis results available, perform analysis first")
+analysis_system.AnalysisSystemError: No analysis results available, perform analysis first
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 660, in run_analysis
+    visualization_results = self.generate_visualizations()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/analysis_system.py", line 384, in generate_visualizations
+    raise AnalysisSystemError(f"Failed to generate visualizations: {str(e)}")
+analysis_system.AnalysisSystemError: Failed to generate visualizations: No analysis results available, perform analysis first
+
+2025-05-11 20:34:32,126 [DEBUG] crypto_analysis:715: Cleaning up resources
+2025-05-11 20:34:32,126 [DEBUG] crypto_analysis:680: Cleaning up resources
+2025-05-11 20:34:32,176 [DEBUG] crypto_analysis:1103: Cleaning up resources
+2025-05-11 20:34:32,227 [ERROR] crypto_analysis:171: Analysis pipeline failed: Failed to generate visualizations: No analysis results available, perform analysis first

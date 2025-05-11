@@ -341,7 +341,7 @@ class CryptoDataFetcher:
         params = {
             "currency": currency,
             "kind": "option",
-            "expired": False
+            "expired": "false"
         }
         
         try:
@@ -447,6 +447,17 @@ class CryptoDataFetcher:
                 
                 logger.info(f"Found {len(instruments)} instruments for {currency}")
                 
+                # Print expiry dates of first 10 instruments for debugging
+                expiry_debug = []
+                for inst in instruments[:10]:
+                    try:
+                        maturity, strike, option_type = self._parse_instrument_name(inst['instrument_name'])
+                        expiry_date = datetime.strptime(maturity, '%d%b%y').date()
+                        expiry_debug.append(str(expiry_date))
+                    except Exception as e:
+                        expiry_debug.append(f"error: {e}")
+                logger.info(f"First 10 expiry dates for {currency}: {expiry_debug}")
+                
                 # Filter instruments by expiration date
                 filtered_instruments = []
                 for inst in instruments:
@@ -502,7 +513,8 @@ class CryptoDataFetcher:
                     df = pd.DataFrame(option_data)
                     
                     # Calculate time to expiry and moneyness
-                    df['time_to_expiry'] = (df['expiration'] - datetime.now().date()).dt.days / 365.0
+                    df['expiration'] = pd.to_datetime(df['expiration'])
+                    df['time_to_expiry'] = (df['expiration'] - pd.Timestamp.now().normalize()).dt.days / 365.0
                     df['is_call'] = df['option_type'] == 'call'
                     
                     # Cache the data
