@@ -1,0 +1,113 @@
+2025-05-11 20:17:12,714 [WARNING] crypto_analysis:173: Configuration issue: API credentials required for production environment.
+2025-05-11 20:17:37,274 [INFO] crypto_analysis:114: Starting Crypto Volatility and Options Analysis System
+2025-05-11 20:17:37,277 [INFO] crypto_analysis:129: No symbols specified, using default: ['BTC-USD', 'ETH-USD']
+2025-05-11 20:17:37,278 [INFO] crypto_analysis:115: Initialized VolatilityOptionsAnalysisSystem for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:17:37,278 [INFO] crypto_analysis:167: Running full analysis pipeline
+2025-05-11 20:17:37,279 [INFO] crypto_analysis:639: Starting analysis pipeline
+2025-05-11 20:17:37,279 [INFO] crypto_analysis:643: Step 1: Fetching data
+2025-05-11 20:17:37,279 [INFO] crypto_analysis:202: Initializing data fetcher
+2025-05-11 20:17:37,281 [INFO] crypto_analysis:81: Initialized CryptoDataFetcher with production environment
+2025-05-11 20:17:37,281 [INFO] crypto_analysis:211: Fetching data for 2 symbols
+2025-05-11 20:17:37,283 [INFO] crypto_analysis:614: Fetching all data for 2 symbols
+2025-05-11 20:17:37,283 [INFO] crypto_analysis:255: Fetching price data for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:17:37,284 [DEBUG] crypto_analysis:261: Fetching data for BTC-USD
+2025-05-11 20:17:37,285 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:17:37,286 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:17:37,288 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:17:37,296 [DEBUG] peewee:3319: ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-05-11 20:17:37,298 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['BTC-USD', 1, 0])
+2025-05-11 20:17:37,301 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:17:37,305 [DEBUG] yfinance:165: BTC-USD: Yahoo GET parameters: {'period1': '2025-04-11 00:00:00+00:00', 'period2': '2025-05-11 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:17:37,306 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:17:37,306 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:17:37,306 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/BTC-USD
+2025-05-11 20:17:37,307 [DEBUG] yfinance:344: params=frozendict.frozendict({'period1': 1744329600, 'period2': 1746921600, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-05-11 20:17:37,307 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:17:37,307 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:17:37,307 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:17:38,237 [DEBUG] yfinance:199: crumb = '14yATQUreFq'
+2025-05-11 20:17:38,238 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:17:38,238 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:17:38,666 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:17:38,667 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:17:38,667 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:17:38,679 [DEBUG] yfinance:281: BTC-USD: yfinance received OHLC data: 2025-04-11 00:00:00 -> 2025-05-10 00:00:00
+2025-05-11 20:17:38,682 [DEBUG] yfinance:318: BTC-USD: OHLC after cleaning: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:17:38,688 [DEBUG] yfinance:388: BTC-USD: OHLC after combining events: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:17:38,693 [DEBUG] yfinance:467: BTC-USD: yfinance returning OHLC: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:17:38,694 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:17:38,694 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:17:38,697 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:17:38,698 [ERROR] crypto_analysis:300: Error fetching price data for BTC-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:17:38,701 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+  File "/Users/mhmdfasihi/miniconda3/envs/crypto_deribit/lib/python3.10/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:17:38,701 [DEBUG] crypto_analysis:261: Fetching data for ETH-USD
+2025-05-11 20:17:38,701 [DEBUG] yfinance:96: Entering download()
+2025-05-11 20:17:38,701 [DEBUG] yfinance:106: Disabling multithreading because DEBUG logging enabled
+2025-05-11 20:17:38,701 [DEBUG] yfinance:96:  Entering history()
+2025-05-11 20:17:38,702 [DEBUG] peewee:3319: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['ETH-USD', 1, 0])
+2025-05-11 20:17:38,702 [DEBUG] yfinance:96:   Entering history()
+2025-05-11 20:17:38,702 [DEBUG] yfinance:165: ETH-USD: Yahoo GET parameters: {'period1': '2025-04-11 00:00:00+00:00', 'period2': '2025-05-11 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-05-11 20:17:38,702 [DEBUG] yfinance:96:    Entering get()
+2025-05-11 20:17:38,702 [DEBUG] yfinance:96:     Entering _make_request()
+2025-05-11 20:17:38,702 [DEBUG] yfinance:343: url=https://query2.finance.yahoo.com/v8/finance/chart/ETH-USD
+2025-05-11 20:17:38,702 [DEBUG] yfinance:344: params=frozendict.frozendict({'period1': 1744329600, 'period2': 1746921600, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-05-11 20:17:38,702 [DEBUG] yfinance:96:      Entering _get_cookie_and_crumb()
+2025-05-11 20:17:38,703 [DEBUG] yfinance:309: cookie_mode = 'basic'
+2025-05-11 20:17:38,703 [DEBUG] yfinance:96:       Entering _get_cookie_and_crumb_basic()
+2025-05-11 20:17:39,085 [DEBUG] yfinance:179: reusing crumb
+2025-05-11 20:17:39,086 [DEBUG] yfinance:101:       Exiting _get_cookie_and_crumb_basic()
+2025-05-11 20:17:39,086 [DEBUG] yfinance:101:      Exiting _get_cookie_and_crumb()
+2025-05-11 20:17:39,536 [DEBUG] yfinance:367: response code=200
+2025-05-11 20:17:39,536 [DEBUG] yfinance:101:     Exiting _make_request()
+2025-05-11 20:17:39,537 [DEBUG] yfinance:101:    Exiting get()
+2025-05-11 20:17:39,539 [DEBUG] yfinance:281: ETH-USD: yfinance received OHLC data: 2025-04-11 00:00:00 -> 2025-05-10 00:00:00
+2025-05-11 20:17:39,541 [DEBUG] yfinance:318: ETH-USD: OHLC after cleaning: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:17:39,545 [DEBUG] yfinance:388: ETH-USD: OHLC after combining events: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:17:39,551 [DEBUG] yfinance:467: ETH-USD: yfinance returning OHLC: 2025-04-11 00:00:00+00:00 -> 2025-05-10 00:00:00+00:00
+2025-05-11 20:17:39,552 [DEBUG] yfinance:101:   Exiting history()
+2025-05-11 20:17:39,552 [DEBUG] yfinance:101:  Exiting history()
+2025-05-11 20:17:39,554 [DEBUG] yfinance:101: Exiting download()
+2025-05-11 20:17:39,556 [ERROR] crypto_analysis:300: Error fetching price data for ETH-USD: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2025-05-11 20:17:39,556 [DEBUG] crypto_analysis:301: Traceback (most recent call last):
+  File "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/crypto_data_fetcher.py", line 289, in fetch_price_data
+    if (df['Close'] <= 0).any():
+  File "/Users/mhmdfasihi/miniconda3/envs/crypto_deribit/lib/python3.10/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-11 20:17:39,557 [INFO] crypto_analysis:412: Fetching options data for 2 symbols from 2025-04-11 to 2025-05-11
+2025-05-11 20:17:39,557 [INFO] crypto_analysis:429: Loading BTC options data from cache: /Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/options_cache/BTC_options_2025-04-11_2025-05-11.csv
+2025-05-11 20:17:39,560 [WARNING] crypto_analysis:437: Error loading cached options data for BTC: Missing column provided to 'parse_dates': 'expiration'
+2025-05-11 20:17:39,561 [INFO] crypto_analysis:439: Fetching options chain for BTC from Deribit
+2025-05-11 20:17:39,565 [DEBUG] urllib3.connectionpool:1049: Starting new HTTPS connection (1): www.deribit.com:443
+2025-05-11 20:17:40,006 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=BTC&kind=option&expired=False HTTP/1.1" 400 212
+2025-05-11 20:17:40,007 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=BTC&kind=option&expired=False. Retrying in 1 seconds...
+2025-05-11 20:17:41,119 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=BTC&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:17:41,119 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=BTC&kind=option&expired=False. Retrying in 2 seconds...
+2025-05-11 20:17:43,245 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=BTC&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:17:43,246 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=BTC&kind=option&expired=False. Retrying in 4 seconds...
+2025-05-11 20:17:47,359 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=BTC&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:17:47,360 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=BTC&kind=option&expired=False. Retrying in 8 seconds...
+2025-05-11 20:17:47,360 [ERROR] crypto_analysis:358: Error fetching instruments for BTC: HTTP error after 3 retries: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=BTC&kind=option&expired=False
+2025-05-11 20:17:47,361 [WARNING] crypto_analysis:444: No instruments found for BTC
+2025-05-11 20:17:47,363 [INFO] crypto_analysis:429: Loading ETH options data from cache: /Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/options_cache/ETH_options_2025-04-11_2025-05-11.csv
+2025-05-11 20:17:47,366 [WARNING] crypto_analysis:437: Error loading cached options data for ETH: Missing column provided to 'parse_dates': 'expiration'
+2025-05-11 20:17:47,366 [INFO] crypto_analysis:439: Fetching options chain for ETH from Deribit
+2025-05-11 20:17:47,475 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=ETH&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:17:47,476 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=ETH&kind=option&expired=False. Retrying in 1 seconds...
+2025-05-11 20:17:48,597 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=ETH&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:17:48,598 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=ETH&kind=option&expired=False. Retrying in 2 seconds...
+2025-05-11 20:17:50,712 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=ETH&kind=option&expired=False HTTP/1.1" 400 212
+2025-05-11 20:17:50,713 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=ETH&kind=option&expired=False. Retrying in 4 seconds...
+2025-05-11 20:17:54,830 [DEBUG] urllib3.connectionpool:544: https://www.deribit.com:443 "GET /api/v2/public/get_instruments?currency=ETH&kind=option&expired=False HTTP/1.1" 400 211
+2025-05-11 20:17:54,831 [WARNING] crypto_analysis:212: HTTP error: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=ETH&kind=option&expired=False. Retrying in 8 seconds...
+2025-05-11 20:17:54,832 [ERROR] crypto_analysis:358: Error fetching instruments for ETH: HTTP error after 3 retries: 400 Client Error: Bad Request for url: https://www.deribit.com/api/v2/public/get_instruments?currency=ETH&kind=option&expired=False
+2025-05-11 20:17:54,832 [WARNING] crypto_analysis:444: No instruments found for ETH
+2025-05-11 20:17:54,836 [DEBUG] crypto_analysis:715: Cleaning up resources
+2025-05-11 20:17:54,894 [WARNING] crypto_analysis:191: Analysis interrupted by user
