@@ -1,22 +1,24 @@
 """
-Visualization module for crypto volatility and options analysis.
+Visualization module for cryptocurrency volatility and options analysis.
 Creates interactive charts and visualization dashboards for analysis results.
 """
 
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import numpy as np
 import pandas as pd
-from datetime import datetime, date, timedelta
-from typing import Dict, List, Tuple, Any, Optional, Union
+import numpy as np
+from datetime import datetime, date
+from typing import Dict, List, Tuple, Optional, Union, Any
+import plotly.graph_objects as go
+import plotly.express as px
+from plotly.subplots import make_subplots
+import logging
 from pathlib import Path
 import os
 import json
-import logging
 import traceback
 import gc
 
-from config import Config, logger
+from ..core.config import Config, logger
+from ..utils.helpers import format_number, save_to_csv
 
 class VisualizationError(Exception):
     """Exception raised for errors in the visualization process."""

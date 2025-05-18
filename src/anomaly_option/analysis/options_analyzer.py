@@ -1,6 +1,5 @@
 """
-Options analysis module for cryptocurrency derivatives.
-Implements Black-Scholes modeling, implied volatility calculations, and options metrics analysis.
+Options analysis module for cryptocurrency options data.
 """
 
 import pandas as pd
@@ -14,8 +13,10 @@ import logging
 import traceback
 import gc
 from functools import lru_cache
+from pathlib import Path
 
-from config import Config, logger
+from ..core.config import Config, logger
+from ..utils.helpers import save_to_csv, load_from_csv, safe_divide
 
 class OptionsAnalysisError(Exception):
     """Exception raised for errors in options analysis."""

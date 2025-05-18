@@ -1,19 +1,16 @@
 """
-Volatility analysis module for cryptocurrency data.
-Implements various volatility calculation methods and anomaly detection.
+Volatility analysis module for cryptocurrency price data.
 """
 
 import pandas as pd
 import numpy as np
-from datetime import datetime, date, timedelta
-from typing import Dict, List, Tuple, Any, Optional, Union, Callable
-import gc
+from datetime import datetime, date
+from typing import Dict, List, Tuple, Optional, Union, Any
 import logging
-import traceback
-from functools import lru_cache
-from scipy import stats
+from pathlib import Path
 
-from config import Config, logger
+from ..core.config import Config, logger
+from ..utils.helpers import calculate_returns, calculate_volatility, save_to_csv
 
 class VolatilityAnalysisError(Exception):
     """Exception raised for errors in the volatility analysis process."""

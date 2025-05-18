@@ -117,6 +117,109 @@ class Config:
         
         return issues
 
+    @classmethod
+    def from_args(cls, args: Any) -> 'Config':
+        """
+        Create a Config instance from command line arguments.
+        
+        Args:
+            args: Command line arguments
+            
+        Returns:
+            Config instance
+        """
+        config = cls()
+        
+        # Update configuration from arguments
+        if hasattr(args, 'symbols') and args.symbols:
+            config.DEFAULT_SYMBOLS = args.symbols
+            
+        if hasattr(args, 'start_date') and args.start_date:
+            config.DEFAULT_START_DATE = args.start_date
+            
+        if hasattr(args, 'end_date') and args.end_date:
+            config.DEFAULT_END_DATE = args.end_date
+            
+        if hasattr(args, 'output_dir') and args.output_dir:
+            config.RESULTS_DIR = Path(args.output_dir)
+            
+        if hasattr(args, 'alpha_vantage_key') and args.alpha_vantage_key:
+            config.ALPHA_VANTAGE_API_KEY = args.alpha_vantage_key
+            
+        if hasattr(args, 'coinmarketcap_key') and args.coinmarketcap_key:
+            config.COINMARKETCAP_API_KEY = args.coinmarketcap_key
+            
+        if hasattr(args, 'max_workers') and args.max_workers:
+            config.MAX_WORKERS = args.max_workers
+            
+        if hasattr(args, 'batch_size') and args.batch_size:
+            config.BATCH_SIZE = args.batch_size
+            
+        if hasattr(args, 'window_size') and args.window_size:
+            config.WINDOW_SIZE = args.window_size
+            
+        if hasattr(args, 'z_threshold') and args.z_threshold:
+            config.Z_THRESHOLD = args.z_threshold
+            
+        if hasattr(args, 'volatility_window') and args.volatility_window:
+            config.VOLATILITY_WINDOW = args.volatility_window
+            
+        if hasattr(args, 'chunk_size') and args.chunk_size:
+            config.CHUNK_SIZE = args.chunk_size
+            
+        if hasattr(args, 'debug') and args.debug:
+            config.LOG_LEVEL = 'DEBUG'
+            
+        # Create necessary directories
+        config._create_directories()
+        
+        return config
+    
+    def _create_directories(self) -> None:
+        """Create necessary directories if they don't exist."""
+        self.CACHE_DIR.mkdir(exist_ok=True)
+        self.RESULTS_DIR.mkdir(exist_ok=True)
+        self.LOG_DIR.mkdir(exist_ok=True)
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """
+        Convert configuration to dictionary.
+        
+        Returns:
+            Dictionary with configuration values
+        """
+        return {
+            'api': {
+                'alpha_vantage_key': self.ALPHA_VANTAGE_API_KEY,
+                'coinmarketcap_key': self.COINMARKETCAP_API_KEY
+            },
+            'data': {
+                'default_symbols': self.DEFAULT_SYMBOLS,
+                'default_start_date': self.DEFAULT_START_DATE,
+                'default_end_date': self.DEFAULT_END_DATE,
+                'data_dir': str(self.CACHE_DIR),
+                'cache_dir': str(self.CACHE_DIR),
+                'results_dir': str(self.RESULTS_DIR)
+            },
+            'analysis': {
+                'window_size': self.WINDOW_SIZE,
+                'z_threshold': self.Z_THRESHOLD,
+                'volatility_window': self.VOLATILITY_WINDOW,
+                'annualization_factor': self.ANNUALIZATION_FACTOR,
+                'chunk_size': self.CHUNK_SIZE
+            },
+            'performance': {
+                'max_workers': self.MAX_WORKERS,
+                'batch_size': self.BATCH_SIZE,
+                'cache_expiry': self.CACHE_EXPIRY
+            },
+            'logging': {
+                'log_level': self.LOG_LEVEL,
+                'log_format': self.LOG_FORMAT,
+                'log_dir': str(self.LOG_DIR)
+            }
+        }
+
 
 # Configure logging
 def setup_logging():

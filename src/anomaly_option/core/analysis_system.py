@@ -16,11 +16,11 @@ import logging
 import traceback
 from pathlib import Path
 
-from config import Config, logger
-from crypto_data_fetcher import CryptoDataFetcher
-from volatility_analyzer import CryptoVolatilityAnalyzer
-from options_analyzer import OptionsAnalyzer
-from visualizer import CryptoVolatilityOptionsVisualizer
+from .config import Config, logger
+from ..data.crypto_data_fetcher import CryptoDataFetcher
+from ..analysis.volatility_analyzer import CryptoVolatilityAnalyzer
+from ..analysis.options_analyzer import OptionsAnalyzer
+from ..visualization.visualizer import CryptoVolatilityOptionsVisualizer
 
 class AnalysisSystemError(Exception):
     """Exception raised for errors in the analysis system."""

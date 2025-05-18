@@ -21,14 +21,13 @@ wheels/
 *.egg
 
 # Virtual Environment
+venv/
+env/
+ENV/
 .env
 .venv
-env/
-venv/
-ENV/
 env.bak/
 venv.bak/
-.mh_env/
 
 # IDE
 .idea/
@@ -38,35 +37,36 @@ venv.bak/
 .DS_Store
 
 # Project specific
-results/
+data/cache/
+data/results/
 logs/
-options_cache/
 *.log
-*.csv
-*.json
-*.html
-*.png
-*.jpg
-*.jpeg
-*.pdf
-
-# Testing
 .coverage
 htmlcov/
 .pytest_cache/
-.tox/
-coverage.xml
-*.cover
-.hypothesis/
-
-# Distribution
-dist/
-build/
-*.egg-info/
+.mypy_cache/
 
 # Jupyter Notebook
 .ipynb_checkpoints
 *.ipynb
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
 # mypy
 .mypy_cache/
