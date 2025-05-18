@@ -6,7 +6,9 @@ import pandas as pd
 import numpy as np
 from datetime import datetime, date
 from typing import Dict, List, Tuple, Optional, Union, Any
+from scipy import stats
 import logging
+import traceback
 from pathlib import Path
 
 from ..core.config import Config, logger
@@ -117,9 +119,9 @@ class CryptoVolatilityAnalyzer:
                 chunk['RV_Parkinson'] = self.calculate_parkinson_volatility(chunk)
                 chunk['RV_Garman_Klass'] = self.calculate_garman_klass_volatility(chunk)
                 
-                # Composite volatility (average of available measures)
                 vol_columns = ['RV_Close', 'RV_Parkinson', 'RV_Garman_Klass']
                 chunk['RV_Composite'] = chunk[vol_columns].mean(axis=1, skipna=True)
+            
             else:
                 logger.warning("Missing OHLC data, using close-to-close volatility only")
                 chunk['RV_Parkinson'] = np.nan

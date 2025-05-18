@@ -4,6 +4,7 @@ Combines anomaly detection with options data analysis for advanced trading insig
 """
 
 import numpy as np
+import yfinance as yf
 import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -25,15 +26,17 @@ import hmac
 import hashlib
 import requests
 from urllib.parse import urlencode
-from visualizer import CryptoVolatilityOptionsVisualizer
+# Fix: Use proper import path
+from .visualization.visualizer import CryptoVolatilityOptionsVisualizer
 
 warnings.filterwarnings('ignore')
 
 # Import all necessary classes
-from crypto_data_fetcher import CryptoDataFetcher
-from volatility_analyzer import CryptoVolatilityAnalyzer
-from options_analyzer import OptionsAnalyzer
-from analysis_system import VolatilityOptionsAnalysisSystem
+# Fix imports
+from .data.crypto_data_fetcher import CryptoDataFetcher
+from .analysis.volatility_analyzer import CryptoVolatilityAnalyzer
+from .analysis.options_analyzer import OptionsAnalyzer
+from .core.analysis_system import VolatilityOptionsAnalysisSystem
 
 
 def datetime_to_timestamp(datetime_obj: datetime) -> int:
@@ -41,6 +44,8 @@ def datetime_to_timestamp(datetime_obj: datetime) -> int:
     return int(datetime.timestamp(datetime_obj) * 1000)
 
 
+# NOTE: This is a duplicated class that is also defined in its own module
+# This should be imported from the proper module instead of being redefined here
 class CryptoDataFetcher:
     """
     Unified data fetcher for both price and options data
@@ -302,6 +307,8 @@ class CryptoDataFetcher:
         return price_data, options_data
 
 
+# NOTE: This is a duplicated class that is also defined in its own module
+# This should be imported from the proper module instead of being redefined here
 class CryptoVolatilityAnalyzer:
     """
     Volatility analysis with anomaly detection capabilities
@@ -482,6 +489,8 @@ class CryptoVolatilityAnalyzer:
         gc.collect()  # Force garbage collection
 
 
+# NOTE: This is a duplicated class that is also defined in its own module
+# This should be imported from the proper module instead of being redefined here
 class OptionsAnalyzer:
     def __init__(
         self,

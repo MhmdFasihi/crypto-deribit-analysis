@@ -128,7 +128,7 @@ class Config:
         Returns:
             Config instance
         """
-        config = cls()
+        config = Config()
         
         # Update configuration from arguments
         if hasattr(args, 'symbols') and args.symbols:
@@ -190,8 +190,8 @@ class Config:
         """
         return {
             'api': {
-                'alpha_vantage_key': self.ALPHA_VANTAGE_API_KEY,
-                'coinmarketcap_key': self.COINMARKETCAP_API_KEY
+                'alpha_vantage_key': getattr(self, 'ALPHA_VANTAGE_API_KEY', ''),
+                'coinmarketcap_key': getattr(self, 'COINMARKETCAP_API_KEY', '')
             },
             'data': {
                 'default_symbols': self.DEFAULT_SYMBOLS,
@@ -265,9 +265,11 @@ def setup_logging():
     logging.config.dictConfig(logging_config)
     return logging.getLogger('crypto_analysis')
 
-
 # Create logger
 logger = setup_logging()
+
+
+
 
 
 # Validate configuration on import

@@ -1,11 +1,11 @@
 {
-  "analysis_time": "2025-05-11T20:44:23.732715",
+  "analysis_time": "2025-05-18T16:09:46.090553",
   "symbols": [
     "BTC-USD",
     "ETH-USD"
   ],
-  "start_date": "2025-04-11",
-  "end_date": "2025-05-11",
+  "start_date": "2025-01-01",
+  "end_date": "2025-05-18",
   "next_window": 30,
   "fetch_options": true,
   "parameters": {

@@ -190,6 +190,7 @@ class CryptoDataFetcher:
                     elif error_code in [10008, 10029, 10043]:  # Rate limit errors
                         raise RateLimitError(f"Rate limit error ({error_code}): {error_message}")
                     else:
+                        logger.error(f"API error ({error_code}): {error_message}")
                         raise APIError(f"API error ({error_code}): {error_message}")
                 
                 return result
@@ -252,6 +253,10 @@ class CryptoDataFetcher:
         Returns:
             Dictionary mapping symbols to price DataFrames
         """
+        # Parse and standardize dates
+        start_date = parse_date(start_date)
+        end_date = parse_date(end_date)
+        
         # Convert dates to strings if they are date objects
         if isinstance(start_date, date):
             start_date = start_date.strftime('%Y-%m-%d')

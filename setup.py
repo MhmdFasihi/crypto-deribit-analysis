@@ -49,7 +49,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "anomaly-option=anomaly_option.cli:main",
+            "anomaly-option=anomaly_option.core.analysis_system:main",
         ],
     },
 ) 

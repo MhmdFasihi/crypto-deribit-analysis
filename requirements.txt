@@ -10,3 +10,4 @@ websockets>=10.0
 matplotlib>=3.4.0
 ratelimit>=2.2.1
 python-dateutil>=2.8.2
+streamlit

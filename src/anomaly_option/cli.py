@@ -1,18 +1,15 @@
 #!/usr/bin/env python3
 """
-Main script for running the cryptocurrency options analysis system.
+Command-line interface for the Anomaly Option Analysis System.
 """
 
 import argparse
-import logging
 import sys
-from datetime import datetime, date, timedelta, timedelta
+from datetime import datetime, date, timedelta
 from pathlib import Path
-from typing import List, Optional
 
 from anomaly_option.core.config import Config, logger
 from anomaly_option.core.analysis_system import VolatilityOptionsAnalysisSystem
-
 
 def parse_date(date_str):
     """Parse date string including relative dates like '7d'."""
@@ -38,7 +35,8 @@ def parse_date(date_str):
         return datetime.strptime(date_str, '%Y-%m-%d').date()
     except ValueError:
         raise ValueError(f"Invalid date format: {date_str}")
-def parse_args() -> argparse.Namespace:
+
+def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
         description="Cryptocurrency options analysis and anomaly detection system"
@@ -135,7 +133,7 @@ def parse_args() -> argparse.Namespace:
     
     return parser.parse_args()
 
-def main() -> int:
+def main():
     """Main entry point for the CLI."""
     args = parse_args()
     
@@ -174,10 +172,7 @@ def main() -> int:
         return 0
         
     except Exception as e:
-        if args.debug:
-            logger.error(f"Error running analysis: {str(e)}", exc_info=True)
-        else:
-            logger.error(f"Error running analysis: {str(e)}")
+        logger.error(f"Error running analysis: {str(e)}", exc_info=True)
         return 1
 
 if __name__ == "__main__":

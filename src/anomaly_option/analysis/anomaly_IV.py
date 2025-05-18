@@ -21,7 +21,9 @@ class EnhancedCryptoAnomalyDetector:
     def __init__(
         self,
         window_size: int = 7,
-        z_threshold: float = 3.0
+        z_threshold: float = 3.0,
+        volatility_window: int = 21,
+        annualization_factor: int = 252
     ) -> None:
         """Initialize detector with configurable parameters."""
         self.window_size = window_size
@@ -71,7 +73,7 @@ class EnhancedCryptoAnomalyDetector:
         log_returns = np.log(closing_prices / closing_prices.shift(1))
 
         # Calculate volatility
-        volatility = returns.rolling(window=self.window_size).std() * np.sqrt(252)  # Annualized
+        volatility = returns.rolling(window=self.volatility_window).std() * np.sqrt(self.annualization_factor)  # Annualized
 
         # Calculate Z-scores for both price and returns
         price_rolling_mean, price_rolling_std, price_z_score = self.calculate_z_score(closing_prices)
