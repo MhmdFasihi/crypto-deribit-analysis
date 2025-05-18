@@ -1,0 +1,33 @@
+{
+  "symbols_analyzed": [
+    "BTC-USD",
+    "ETH-USD"
+  ],
+  "period": {
+    "start_date": "2025-04-11",
+    "end_date": "2025-05-11",
+    "next_window": 30
+  },
+  "results": {
+    "volatility": {
+      "symbols": [],
+      "count": 0
+    },
+    "options": {
+      "symbols": [],
+      "count": 0
+    }
+  },
+  "data_available": {
+    "price_data": false,
+    "options_data": false
+  },
+  "output": {
+    "report": "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/results/analysis_report.html",
+    "file_paths": {
+      "metadata": "/Users/mhmdfasihi/Desktop/Code/analysis/anomaly_option/results/analysis_metadata.json"
+    }
+  },
+  "elapsed_time": 17.42600703239441,
+  "warning": "No data was available for the specified symbols and date range"
+}

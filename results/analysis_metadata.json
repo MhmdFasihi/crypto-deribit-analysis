@@ -1,0 +1,18 @@
+{
+  "analysis_time": "2025-05-11T20:44:23.732715",
+  "symbols": [
+    "BTC-USD",
+    "ETH-USD"
+  ],
+  "start_date": "2025-04-11",
+  "end_date": "2025-05-11",
+  "next_window": 30,
+  "fetch_options": true,
+  "parameters": {
+    "window_size": 30,
+    "z_threshold": 3.0,
+    "volatility_window": 21,
+    "annualization_factor": 365,
+    "risk_free_rate": 0.05
+  }
+}
