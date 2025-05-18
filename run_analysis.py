@@ -172,11 +172,24 @@ def main():
                 return 1
             
             # Print summary
-            logger.info("Analysis pipeline completed successfully")
-            logger.info(f"Analyzed {len(summary['symbols_analyzed'])} symbols from {summary['period']['start_date']} to {summary['period']['end_date']}")
-            logger.info(f"Generated {summary['results']['volatility']['count']} volatility and {summary['results']['options']['count']} options analyses")
-            logger.info(f"Report saved to {summary['output']['report']}")
-            logger.info(f"Elapsed time: {summary['elapsed_time']:.2f} seconds")
+            if 'error' in summary:
+                logger.warning(f"Analysis completed with warnings: {summary.get('error', 'Unknown error')}")
+            else:
+                logger.info("Analysis pipeline completed successfully")
+            
+            logger.info(f"Analyzed {len(summary.get('symbols_analyzed', []))} symbols from {summary.get('period', {}).get('start_date', 'unknown')} to {summary.get('period', {}).get('end_date', 'unknown')}")
+            
+            volatility_count = summary.get('results', {}).get('volatility', {}).get('count', 0)
+            options_count = summary.get('results', {}).get('options', {}).get('count', 0)
+            logger.info(f"Generated {volatility_count} volatility and {options_count} options analyses")
+            
+            report_path = summary.get('output', {}).get('report', 'Not generated')
+            if report_path != 'Not generated':
+                logger.info(f"Report saved to {report_path}")
+            else:
+                logger.warning("No report was generated due to insufficient data")
+                
+            logger.info(f"Elapsed time: {summary.get('elapsed_time', 0):.2f} seconds")
             
             # Save summary to file
             summary_path = os.path.join(system.output_dir, "analysis_summary.json")
